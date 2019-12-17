@@ -48,60 +48,19 @@ static const command step[] = {
 	{ TRIGGERS,   5 },	{ NOTHING,  150 },
 	{ A,          5 },	{ NOTHING,  250 },
 
-	// Go into game
-	{ HOME,    5 },	{ NOTHING,  250 },
-	{ A,          5 },	{ NOTHING,  250 },
-
-	// enter den with 2000 watts
-	{ A,          5 },	{ NOTHING,  20 },
-	{ A,          5 },	{ NOTHING,  20 },
-	{ A,          5 },	{ NOTHING,  50 },
-
-	// start search
-	{ A,          5 },	{ NOTHING,  300 },
-
-	// one day backward
-	{ HOME,    5 },		{ NOTHING,  100 },
-	{ DOWN,       5 },		{ NOTHING,  5 },
-	{ RIGHT,      5 },		{ NOTHING,  5 },
-	{ RIGHT,      5 },		{ NOTHING,  5 },
-	{ RIGHT,      5 },		{ NOTHING,  5 },
-	{ RIGHT,      5 },		{ NOTHING,  5 },
-	{ A,          5 },		{ NOTHING,  40 },
-	{ DOWN,       140 },	{ NOTHING,  10 },
-	{ A,          5 },		{ NOTHING,  20 },
-	{ DOWN,       5 },		{ NOTHING,  5 },
-	{ DOWN,       5 },		{ NOTHING,  5 },
-	{ DOWN,       5 },		{ NOTHING,  5 },
-	{ DOWN,       5 },		{ NOTHING,  5 },
-	{ A,          5 },		{ NOTHING,  20 },
-	{ DOWN,       5 },		{ NOTHING,  5 },
-	{ DOWN,       5 },		{ NOTHING,  5 },
-	{ A,          5 },		{ NOTHING,  20 },
-	{ RIGHT,      5 },		{ NOTHING,  5 },
-	{ DOWN,       5 },		{ NOTHING,  5 },
-	{ RIGHT,      25 },		{ NOTHING,  5 },
-	{ A,          5 },		{ NOTHING,  5 },
-	{ HOME,    5 },		{ NOTHING,  100 },
-	{ A,          5 },		{ NOTHING,  20 },
-	{ B,          5 },		{ NOTHING,  40 },
-	{ A,          5 },		{ NOTHING,  220 },
-
-	// enter den without 2000 watts
-	{ A,          5 },		{ NOTHING,  50 },
-
-	// start search
-	{ A,          5 },		{ NOTHING,  300 },
-
+	// // Go into game
+	// { HOME,       5 },	{ NOTHING,  250 },
+	// { A,          5 },	{ NOTHING,  250 },
+	
 	// one day forward
-	{ HOME,    5 },		{ NOTHING,  100 },
-	{ DOWN,       5 },		{ NOTHING,  5 },
-	{ RIGHT,      5 },		{ NOTHING,  5 },
-	{ RIGHT,      5 },		{ NOTHING,  5 },
-	{ RIGHT,      5 },		{ NOTHING,  5 },
-	{ RIGHT,      5 },		{ NOTHING,  5 },
+	{ HOME,       5 },		{ NOTHING,  80 },
+	{ DOWN,       5 },		{ NOTHING,  2 },
+	{ RIGHT,      5 },		{ NOTHING,  1 },
+	{ RIGHT,      5 },		{ NOTHING,  1 },
+	{ RIGHT,      5 },		{ NOTHING,  1 },
+	{ RIGHT,      5 },		{ NOTHING,  1 },
 	{ A,          5 },		{ NOTHING,  40 },
-	{ DOWN,       140 },	{ NOTHING,  10 },
+	{ DOWN,       90 },		{ NOTHING,  10 },
 	{ A,          5 },		{ NOTHING,  20 },
 	{ DOWN,       5 },		{ NOTHING,  5 },
 	{ DOWN,       5 },		{ NOTHING,  5 },
@@ -111,14 +70,84 @@ static const command step[] = {
 	{ DOWN,       5 },		{ NOTHING,  5 },
 	{ DOWN,       5 },		{ NOTHING,  5 },
 	{ A,          5 },		{ NOTHING,  20 },
-	{ RIGHT,      5 },		{ NOTHING,  5 },
 	{ UP,         5 },		{ NOTHING,  5 },
 	{ RIGHT,      25 },		{ NOTHING,  5 },
 	{ A,          5 },		{ NOTHING,  5 },
-	{ HOME,    5 },		{ NOTHING,  100 },
+	{ HOME,       5 },		{ NOTHING,  80 },
+	{ A,          5 },		{ NOTHING,  60 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+
+	// Rotom Lottery
+	{ A,          5 },		{ NOTHING,  40 },
 	{ A,          5 },		{ NOTHING,  20 },
-	{ B,          5 },		{ NOTHING,  40 },
-	{ A,          5 },		{ NOTHING,  220 },
+	{ DOWN,       5 },		{ NOTHING,  10 },
+	{ A,          5 },		{ NOTHING,  40 },
+	{ A,          5 },		{ NOTHING,  40 },
+	{ A,          5 },		{ NOTHING,  40 },
+	{ A,          5 },		{ NOTHING,  40 },
+	{ A,          5 },		{ NOTHING,  100 },
+	{ A,          5 },		{ NOTHING,  40 },
+	{ A,          5 },		{ NOTHING,  40 },
+	{ A,          5 },		{ NOTHING,  40 },
+	{ A,          5 },		{ NOTHING,  40 },
+	{ A,          5 },		{ NOTHING,  100 },
+	{ A,          5 },		{ NOTHING,  40 },
+	{ A,          5 },		{ NOTHING,  40 },
+	{ A,          5 },		{ NOTHING,  40 },
+	{ A,          5 },		{ NOTHING,  40 },
+	{ A,          5 },		{ NOTHING,  40 },
+	{ A,          5 },		{ NOTHING,  100 },
+	{ A,          5 },		{ NOTHING,  40 },
+	{ A,          5 },		{ NOTHING,  40 },
+	{ A,          5 },		{ NOTHING,  40 },
+
+	// one day backward
+	{ HOME,       5 },		{ NOTHING,  80 },
+	{ DOWN,       5 },		{ NOTHING,  2 },
+	{ RIGHT,      5 },		{ NOTHING,  1 },
+	{ RIGHT,      5 },		{ NOTHING,  1 },
+	{ RIGHT,      5 },		{ NOTHING,  1 },
+	{ RIGHT,      5 },		{ NOTHING,  1 },
+	{ A,          5 },		{ NOTHING,  40 },
+	{ DOWN,       90 },		{ NOTHING,  10 },
+	{ A,          5 },		{ NOTHING,  20 },
+	{ DOWN,       5 },		{ NOTHING,  5 },
+	{ DOWN,       5 },		{ NOTHING,  5 },
+	{ DOWN,       5 },		{ NOTHING,  5 },
+	{ DOWN,       5 },		{ NOTHING,  5 },
+	{ A,          5 },		{ NOTHING,  20 },
+	{ DOWN,       5 },		{ NOTHING,  5 },
+	{ DOWN,       5 },		{ NOTHING,  5 },
+	{ A,          5 },		{ NOTHING,  20 },
+	{ DOWN,       5 },		{ NOTHING,  5 },
+	{ RIGHT,      25 },		{ NOTHING,  5 },
+	{ A,          5 },		{ NOTHING,  5 },
+	{ HOME,       5 },		{ NOTHING,  80 },
+	{ A,          5 },		{ NOTHING,  20 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+	{ B,          5 },		{ NOTHING,  5 },
+
+	// save
+	{ X,          5 },		{ NOTHING,  50 },
+	{ R,          5 },		{ NOTHING,  60 },
+	{ A,          5 },		{ NOTHING,  120 }
 
 };
 
@@ -343,7 +372,15 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 					break;
 
 				case RIGHT:
-					ReportData->LX = STICK_MAX;				
+					ReportData->LX = STICK_MAX;
+					break;
+
+				case X:
+					ReportData->Button |= SWITCH_X;
+					break;
+
+				case Y:
+					ReportData->Button |= SWITCH_Y;
 					break;
 
 				case A:
@@ -389,7 +426,7 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 
 				// state = CLEANUP;
 
-				bufindex = 11;
+				bufindex = 7;
 				duration_count = 0;
 
 				state = BREATHE;
