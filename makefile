@@ -17,10 +17,12 @@ ARCH         = AVR8
 F_CPU        = 16000000
 F_USB        = $(F_CPU)
 OPTIMIZATION = s
+INCLUDE_DIR  = include
 TARGET       = Joystick
-SRC          = $(TARGET).c Descriptors.c $(LUFA_SRC_USB)
+SRC_DIR      = src
+SRC          = $(SRC_DIR)/$(TARGET).c $(SRC_DIR)/Descriptors.c $(LUFA_SRC_USB)
 LUFA_PATH    = ./lufa/LUFA
-CC_FLAGS     = -DUSE_LUFA_CONFIG_HEADER -IConfig/
+CC_FLAGS     = -DUSE_LUFA_CONFIG_HEADER -Iinclude/
 LD_FLAGS     =
 
 # Default target
