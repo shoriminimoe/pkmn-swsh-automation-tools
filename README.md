@@ -1,16 +1,14 @@
-## snowball thrower
+## pkmn swsh watts farmer
 
-Automatically throws snowballs in The Legend of Zelda: Breath of the Wild by emulating a controller on a Teensy++ v2.0
+Automatically farms watts in Pokémon Sword & Shield by emulating a controller on a Teensy2.0++
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/udo8mv5oarg/0.jpg)](https://www.youtube.com/watch?v=udo8mv5oarg)
-
-A full writeup is [here](https://medium.com/@bertrandom/automating-zelda-3b37127e24c8).
+Video:
+[![YouTube Video](https://i.ytimg.com/vi/_R4flAlUa9U/hqdefault.jpg)](https://youtu.be/_R4flAlUa9U)
 
 #### How to use
 
-Walk up to Pondo until the **(A) Talk** option is available and plug in the controller. It will automatically sync with the console, initiate the bowling game with Pondo, throw a perfect strike, and end the bowling game. It will play the bowling game in a loop.
-
-Note that due to certain weather conditions, Link will sometimes fail to throw a strike, causing the game to enter into a mode where Link has to throw again. Thanks to a [change by exsilium](https://github.com/bertrandom/snowball-thrower/pull/1), the loop will recover from this, given enough time. I've tested this running for over 24 hours.
+Walk to a den and throw an Wishing Piece in it. Use the date spoofing exploit until the den glows red (don't go in yet!).
+Now go into the Change Grip/Order window on your Switch Homescreen, press nothing and plug in the Teensy2.0++. It will automatically sync with the console and starts farming watts for you.
 
 In case you see issues with controller conflicts while in docked mode, try using a USB-C to USB-A adapter in handheld mode. In dock mode, changes in the HDMI connection will briefly make the Switch not respond to incoming USB commands, skipping parts of the sequence. These changes may include turning off the TV, or switching the HDMI input. (Switching to the internal tuner will be OK, if this doesn't trigger a change in the HDMI input.)
 
@@ -22,15 +20,14 @@ Go to the Teensy website and download/install the [Teensy Loader application](ht
 LUFA has been included as a git submodule, so cloning the repo like this:
 
 ```
-git clone --recursive git@github.com:bertrandom/snowball-thrower.git
+git clone --recursive git@github.com:jarlave/pkmn-swsh-watts-farmer.git
 ```
 
 will put LUFA in the right directory.
 
-Now you should be ready to rock. Open a terminal window in the `snowball-thrower` directory, type `make`, and hit enter to compile. If all goes well, the printout in the terminal will let you know it finished the build! Follow the directions on flashing `Joystick.hex` onto your Teensy, which can be found page where you downloaded the Teensy Loader application.
+Now you should be ready to rock. Open a terminal window in the `pkmn-swsh-watts-farmer` directory, type `make`, and hit enter to compile. If all goes well, the printout in the terminal will let you know it finished the build! Follow the directions on flashing `Joystick.hex` onto your Teensy, which can be found page where you downloaded the Teensy Loader application.
 
 #### Thanks
 
 Thanks to Shiny Quagsire for his [Splatoon post printer](https://github.com/shinyquagsire23/Switch-Fightstick) and progmem for his [original discovery](https://github.com/progmem/Switch-Fightstick).
-
-Thanks to [exsilium](https://github.com/bertrandom/snowball-thrower/pull/1) for improving the command structure, optimizing the waiting times, and handling the failure scenarios. It can now run indefinitely!
+Also thanks to bertrandom for his [snowball thrower](https://github.com/bertrandom/snowball-thrower) and all the modifications.
