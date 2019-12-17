@@ -2,7 +2,7 @@
 
 Automatically farms watts in Pokémon Sword & Shield by emulating a controller on a Teensy2.0++
 
-Video:
+#### Video
 [![YouTube Video](https://i.ytimg.com/vi/_R4flAlUa9U/hqdefault.jpg)](https://youtu.be/_R4flAlUa9U)
 
 #### How to use
