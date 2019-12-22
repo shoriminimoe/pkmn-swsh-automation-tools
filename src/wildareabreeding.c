@@ -47,17 +47,16 @@ typedef struct {
 
 static const command step[] = {
 	// Setup controller
-						{ NOTHING,  250 },
+						{ NOTHING,  150 },
 	{ TRIGGERS,   5 },	{ NOTHING,  150 },
 	{ TRIGGERS,   5 },	{ NOTHING,  150 },
-	{ A,          5 },	{ NOTHING,  200 },
+	{ A,          5 },	{ NOTHING,  100 },
 
 	// Open game
 	{ HOME,       5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 
 	/* ###### Pokemon slot 2 ###### */
-
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 }, //open menu
 	{ A,          5 },	{ NOTHING,  100 }, 
@@ -79,8 +78,10 @@ static const command step[] = {
 
 	// start hatching (~15 rounds)
 	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
-	{ POSITION, 130 },	{ NOTHING,    5 }, //drive to the right wall
-	{ SPIN,    2600 },	{ NOTHING,    5 }, //spin for 20 cycles
+	{ POSITION,  50 },	{ NOTHING,    5 },
+	{ UP,        20 },	{ NOTHING,    5 },
+	{ POSITION,  60 },	{ NOTHING,    5 }, //get into position
+	{ SPIN,    2600 },	{ NOTHING,    5 }, //spin for ~15 rounds
 
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 }, //Oh
@@ -89,7 +90,6 @@ static const command step[] = {
 	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
 
 	/* ###### Pokemon slot 3 ###### */
-
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
@@ -112,7 +112,9 @@ static const command step[] = {
 
 	// start hatching (~15 rounds)
 	{ PLUS,       5 },	{ NOTHING,    5 },
-	{ POSITION, 130 },	{ NOTHING,    5 },
+	{ POSITION,  50 },	{ NOTHING,    5 },
+	{ UP,        20 },	{ NOTHING,    5 },
+	{ POSITION,  60 },	{ NOTHING,    5 }, 
 	{ SPIN,    2600 },	{ NOTHING,    5 },
 
 	// egg hatched?
@@ -122,7 +124,6 @@ static const command step[] = {
 	{ PLUS,       5 },	{ NOTHING,  100 },
 
 	/* ###### Pokemon slot 4 ###### */
-
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
@@ -146,7 +147,9 @@ static const command step[] = {
 
 	// start hatching (~15 rounds)
 	{ PLUS,       5 },	{ NOTHING,    5 },
-	{ POSITION, 130 },	{ NOTHING,    5 },
+	{ POSITION,  50 },	{ NOTHING,    5 },
+	{ UP,        20 },	{ NOTHING,    5 },
+	{ POSITION,  60 },	{ NOTHING,    5 }, 
 	{ SPIN,    2600 },	{ NOTHING,    5 },
 
 	// egg hatched?
@@ -156,7 +159,6 @@ static const command step[] = {
 	{ PLUS,       5 },	{ NOTHING,  100 },
 
 	/* ###### Pokemon slot 5 ###### */
-
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
@@ -181,7 +183,9 @@ static const command step[] = {
 
 	// start hatching (~15 rounds)
 	{ PLUS,       5 },	{ NOTHING,    5 },
-	{ POSITION, 130 },	{ NOTHING,    5 },
+	{ POSITION,  50 },	{ NOTHING,    5 },
+	{ UP,        20 },	{ NOTHING,    5 },
+	{ POSITION,  60 },	{ NOTHING,    5 }, 
 	{ SPIN,    2600 },	{ NOTHING,    5 },
 
 	// egg hatched?
@@ -191,7 +195,6 @@ static const command step[] = {
 	{ PLUS,       5 },	{ NOTHING,  100 },
 
 	/* ###### Pokemon slot 6 ###### */
-
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
@@ -217,7 +220,9 @@ static const command step[] = {
 
 	// start hatching (~15 rounds)
 	{ PLUS,       5 },	{ NOTHING,    5 },
-	{ POSITION, 130 },	{ NOTHING,    5 },
+	{ POSITION,  50 },	{ NOTHING,    5 },
+	{ UP,        20 },	{ NOTHING,    5 },
+	{ POSITION,  60 },	{ NOTHING,    5 }, 
 	{ SPIN,    2600 },	{ NOTHING,    5 },
 
 	// egg hatched?
