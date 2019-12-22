@@ -1,6 +1,6 @@
 all:
 	make -f wattsfarmer.mk
-	make -f spamA.mk
+	make -f repeat-a.mk
 	make -f masterballs.mk
 	make -f wildareabreeding.mk
 	make clean
@@ -9,8 +9,8 @@ watts:
 	make -f wattsfarmer.mk
 	make clean
 
-dig:
-	make -f spamA.mk
+repeat-a:
+	make -f repeat-a.mk
 	make clean
 
 balls:

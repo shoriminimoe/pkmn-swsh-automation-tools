@@ -1,6 +1,6 @@
 # Pokémon Sword & Shield automation tools
 
-Automatically farms Watts/Masterballs/Fossils at digging duo and Shiny fossil Pokemon (with spamA) in Pokémon Sword & Shield by emulating a controller on a Teensy++ 2.0
+Automatically farms Watts/Masterballs/Fossils at digging duo and Shiny fossil Pokemon (with repeat-a) in Pokémon Sword & Shield by emulating a controller on a Teensy++ 2.0
 
 ## Video (Watts Farm)
 [![YouTube Video](https://i.ytimg.com/vi/_R4flAlUa9U/hqdefault.jpg)](https://youtu.be/_R4flAlUa9U)
@@ -24,7 +24,7 @@ Automatically farms Watts/Masterballs/Fossils at digging duo and Shiny fossil Po
 5. go into the **Change Grip/Order** window on your Switch Homescreen and press nothing
 6. plug in the Teensy++ 2.0
 
-#### Digging Duo/Shiny fossil Pokemon (spamA)
+#### Digging Duo/Shiny fossil Pokemon (repeat-a)
 
 1. got to Route 6 where you convert your Fossils to Pokemon
 2. go into the **Change Grip/Order** window on your Switch Homescreen and press nothing
@@ -55,7 +55,7 @@ git clone --recursive git@github.com:jarlave/pkmn-swsh-automation-tools.git
 
 will put LUFA in the right directory.
 
-Now you should be ready to rock. Open a terminal window in the `pkmn-swsh-automation-tools` directory, type `make`, and hit enter to compile. If all goes well, the printout in the terminal will let you know it finished the build! Follow the directions on flashing `wattsfamer.hex`/`masterballs.hex`/`spamA.hex`/`wildareabreeding.hex` onto your Teensy, which can be found page where you downloaded the Teensy Loader application.
+Now you should be ready to rock. Open a terminal window in the `pkmn-swsh-automation-tools` directory, type `make`, and hit enter to compile. If all goes well, the printout in the terminal will let you know it finished the build! Follow the directions on flashing `wattsfamer.hex`/`masterballs.hex`/`repeat-a.hex`/`wildareabreeding.hex` onto your Teensy, which can be found page where you downloaded the Teensy Loader application.
 
 #### Thanks
 
