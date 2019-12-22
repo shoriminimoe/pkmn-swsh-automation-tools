@@ -32,9 +32,9 @@ Automatically farms Watts/Masterballs/Fossils at digging duo and Shiny fossil Po
 
 #### Shiny breeding
 
-1.  fly to the daycare in the wild area
+1. fly to the daycare in the wild area
 2. your party needs to be full and in the first slot should be a Pokémon with the **Flame Body** ability
-3. move your town map button in the menu to the bottom right
+3. selection in menu needs to hover the map button
 4. go into the **Change Grip/Order** window on your Switch Homescreen and press nothing
 5. plug in the Teensy++ 2.0
 

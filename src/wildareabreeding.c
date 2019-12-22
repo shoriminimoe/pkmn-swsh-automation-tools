@@ -60,8 +60,6 @@ static const command step[] = {
 
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 }, //open menu
-	{ DOWN,      20 },	{ NOTHING,    5 },
-	{ RIGHT,     50 },	{ NOTHING,    5 }, //select map in bottom right
 	{ A,          5 },	{ NOTHING,  100 }, 
 	{ A,          5 },	{ NOTHING,  100 }, //you want to teleport here?
 	{ A,          5 },	{ NOTHING,  100 }, //sure!
@@ -79,7 +77,7 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 }, //Yes!
 	{ A,          5 },	{ NOTHING,  100 }, //take good care of it
 
-	// start hatching (20 cycles)
+	// start hatching (~15 rounds)
 	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
 	{ POSITION, 130 },	{ NOTHING,    5 }, //drive to the right wall
 	{ SPIN,    2600 },	{ NOTHING,    5 }, //spin for 20 cycles
@@ -94,8 +92,6 @@ static const command step[] = {
 
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 },
-	{ DOWN,      20 },	{ NOTHING,    5 },
-	{ RIGHT,     50 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
@@ -114,7 +110,7 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 
-	// start hatching (20 cycles)
+	// start hatching (~15 rounds)
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION, 130 },	{ NOTHING,    5 },
 	{ SPIN,    2600 },	{ NOTHING,    5 },
@@ -129,8 +125,6 @@ static const command step[] = {
 
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 },
-	{ DOWN,      20 },	{ NOTHING,    5 },
-	{ RIGHT,     50 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
@@ -150,7 +144,7 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 
-	// start hatching (20 cycles)
+	// start hatching (~15 rounds)
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION, 130 },	{ NOTHING,    5 },
 	{ SPIN,    2600 },	{ NOTHING,    5 },
@@ -165,8 +159,6 @@ static const command step[] = {
 
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 },
-	{ DOWN,      20 },	{ NOTHING,    5 },
-	{ RIGHT,     50 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
@@ -187,7 +179,7 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 
-	// start hatching (20 cycles)
+	// start hatching (~15 rounds)
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION, 130 },	{ NOTHING,    5 },
 	{ SPIN,    2600 },	{ NOTHING,    5 },
@@ -202,8 +194,6 @@ static const command step[] = {
 
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 },
-	{ DOWN,      20 },	{ NOTHING,    5 },
-	{ RIGHT,     50 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
@@ -225,7 +215,7 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 
-	// start hatching (20 cycles)
+	// start hatching (~15 rounds)
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION, 130 },	{ NOTHING,    5 },
 	{ SPIN,    2600 },	{ NOTHING,    5 },
