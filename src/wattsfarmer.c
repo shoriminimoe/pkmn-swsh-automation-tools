@@ -43,7 +43,7 @@ typedef struct {
 
 static const command step[] = {
 	// Setup controller
-						{ NOTHING,  250 },
+				{ NOTHING,  250 },
 	{ TRIGGERS,   5 },	{ NOTHING,  150 },
 	{ TRIGGERS,   5 },	{ NOTHING,  150 },
 	{ A,          5 },	{ NOTHING,  250 },
@@ -58,41 +58,7 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  20 },
 
 	// start search
-	{ A,          5 },	{ NOTHING,  300 },
-
-	// one day backward
-	{ HOME,       5 },		{ NOTHING,  80 },
-	{ DOWN,       5 },		{ NOTHING,  2 },
-	{ RIGHT,      5 },		{ NOTHING,  1 },
-	{ RIGHT,      5 },		{ NOTHING,  1 },
-	{ RIGHT,      5 },		{ NOTHING,  1 },
-	{ RIGHT,      5 },		{ NOTHING,  1 },
-	{ A,          5 },		{ NOTHING,  40 },
-	{ DOWN,       90 },		{ NOTHING,  10 },
-	{ A,          5 },		{ NOTHING,  20 },
-	{ DOWN,       5 },		{ NOTHING,  5 },
-	{ DOWN,       5 },		{ NOTHING,  5 },
-	{ DOWN,       5 },		{ NOTHING,  5 },
-	{ DOWN,       5 },		{ NOTHING,  5 },
-	{ A,          5 },		{ NOTHING,  20 },
-	{ DOWN,       5 },		{ NOTHING,  5 },
-	{ DOWN,       5 },		{ NOTHING,  5 },
-	{ A,          5 },		{ NOTHING,  20 },
-	{ DOWN,       5 },		{ NOTHING,  5 },
-	{ RIGHT,      25 },		{ NOTHING,  5 },
-	{ A,          5 },		{ NOTHING,  5 },
-	{ HOME,       5 },		{ NOTHING,  80 },
-	{ A,          5 },		{ NOTHING,  20 },
-
-	// leave den
-	{ B,          5 },		{ NOTHING,  40 },
-	{ A,          5 },		{ NOTHING,  220 },
-
-	// enter den without 2000 watts
-	{ A,          5 },		{ NOTHING,  20 },
-
-	// start search
-	{ A,          5 },		{ NOTHING,  300 },
+	{ A,          5 },	{ NOTHING,  200 },
 
 	// one day forward
 	{ HOME,       5 },		{ NOTHING,  80 },
@@ -102,8 +68,8 @@ static const command step[] = {
 	{ RIGHT,      5 },		{ NOTHING,  1 },
 	{ RIGHT,      5 },		{ NOTHING,  1 },
 	{ A,          5 },		{ NOTHING,  40 },
-	{ DOWN,       90 },		{ NOTHING,  10 },
-	{ A,          5 },		{ NOTHING,  20 },
+	{ DOWN,       90 },		{ NOTHING,  5 },
+	{ A,          5 },		{ NOTHING,  5 },
 	{ DOWN,       5 },		{ NOTHING,  5 },
 	{ DOWN,       5 },		{ NOTHING,  5 },
 	{ DOWN,       5 },		{ NOTHING,  5 },
@@ -112,6 +78,7 @@ static const command step[] = {
 	{ DOWN,       5 },		{ NOTHING,  5 },
 	{ DOWN,       5 },		{ NOTHING,  5 },
 	{ A,          5 },		{ NOTHING,  20 },
+	{ RIGHT,      5 },		{ NOTHING,  5 },
 	{ UP,         5 },		{ NOTHING,  5 },
 	{ RIGHT,      25 },		{ NOTHING,  5 },
 	{ A,          5 },		{ NOTHING,  5 },
