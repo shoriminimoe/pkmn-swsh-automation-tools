@@ -1,25 +1,24 @@
-all:
-	make -f wattsfarmer.mk
-	make -f spamA.mk
-	make -f masterballs.mk
-	make -f wildareabreeding.mk
-	make clean
+all:  watts dig balls wildarea
 
 watts:
 	make -f wattsfarmer.mk
-	make clean
+	mkdir -p hex
+	mv wattsfarmer.hex hex
 
 dig:
 	make -f spamA.mk
-	make clean
+	mkdir -p hex
+	mv spamA.hex hex
 
 balls:
 	make -f masterballs.mk
-	make clean
+	mkdir -p hex
+	mv masterballs.hex hex
 
 wildarea:
 	make -f wildareabreeding.mk
-	make clean
+	mkdir -p hex
+	mv wildareabreeding.hex hex
 
 clean:
 	rm -f *.bin *.eep *.elf *.lss *.map *.sym
