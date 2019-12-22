@@ -35,8 +35,9 @@ Automatically farms Watts/Masterballs/Fossils at digging duo and Shiny fossil Po
 1. fly to the daycare in the wild area
 2. your party needs to be full and in the first slot should be a Pokémon with the **Flame Body** ability
 3. selection in menu needs to hover the map button
-4. go into the **Change Grip/Order** window on your Switch Homescreen and press nothing
-5. plug in the Teensy++ 2.0
+4. exit the menu
+5. go into the **Change Grip/Order** window on your Switch Homescreen and press nothing
+6. plug in the Teensy++ 2.0
 
 
 *In case you see issues with controller conflicts while in docked mode, try using a USB-C to USB-A adapter in handheld mode. In dock mode, changes in the HDMI connection will briefly make the Switch not respond to incoming USB commands, skipping parts of the sequence. These changes may include turning off the TV, or switching the HDMI input. (Switching to the internal tuner will be OK, if this doesn't trigger a change in the HDMI input.)*
