@@ -45,6 +45,22 @@ typedef struct {
 	uint16_t duration;
 } command; 
 
+/*
+
+https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
+
+ 5 cycles =  700 !! DO NOT FORGET TO UNCOMMENT THE "if 5 cycles (Magikarp)" PARTS !!
+10 cycles = 1400
+15 cycles = 2100
+20 cycles = 2800 (default)
+25 cycles = 3500
+30 cycles = 4200
+35 cycles = 4900
+40 cycles = 5600
+
+*/
+#define cycles 2800
+
 static const command step[] = {
 	// Setup controller
 						{ NOTHING,  150 },
@@ -76,25 +92,24 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 }, //Yes!
 	{ A,          5 },	{ NOTHING,  100 }, //take good care of it
 
-	// start hatching (~7 rounds)
+	// start hatching
 	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
 	{ POSITION,  50 },	{ NOTHING,    5 },
 	{ UP,        20 },	{ NOTHING,    5 },
 	{ POSITION,  60 },	{ NOTHING,    5 }, //get into position
-	{ SPIN,    1300 },	{ NOTHING,    5 }, //spin for ~7 rounds
+	{ SPIN,  cycles },	{ NOTHING,    5 }, //spin for X cycles
 
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 }, //Oh
 	{ A,          5 },	{ NOTHING, 	125 }, //"Pokemon" hatched from the egg
 	{ B,          5 },	{ NOTHING, 	 10 },
 
-	// extra rounds (~7 rounds)
-	{ SPIN,    1300 },	{ NOTHING,    5 }, //spin for ~7 rounds
+	// if 5 cycles (Magikarp) 
+	/*{ SPIN,  cycles },	{ NOTHING,    5 }, // extra rounds to make sure daycare have an egg
+	{ A,          5 },	{ NOTHING, 	825 },
+	{ A,          5 },	{ NOTHING, 	125 },
+	{ B,          5 },	{ NOTHING, 	 10 },*/
 
-	// egg hatched? #2
-	{ A,          5 },	{ NOTHING, 	825 }, //Oh
-	{ A,          5 },	{ NOTHING, 	125 }, //"Pokemon" hatched from the egg
-	{ B,          5 },	{ NOTHING, 	 10 },
 	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
 
 	/* ###### Pokemon slot 3 ###### */
@@ -118,26 +133,25 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 
-	// start hatching (~7 rounds)
+	// start hatching
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION,  50 },	{ NOTHING,    5 },
 	{ UP,        20 },	{ NOTHING,    5 },
 	{ POSITION,  60 },	{ NOTHING,    5 },
-	{ SPIN,    1300 },	{ NOTHING,    5 },
+	{ SPIN,  cycles },	{ NOTHING,    5 },
 
 	// egg hatched?
-	{ A,          5 },	{ NOTHING, 	825 },
-	{ A,          5 },	{ NOTHING, 	125 },
+	{ A,          5 },	{ NOTHING, 	825 }, //Oh
+	{ A,          5 },	{ NOTHING, 	125 }, //"Pokemon" hatched from the egg
 	{ B,          5 },	{ NOTHING, 	 10 },
 
-	// extra rounds (~7 rounds)
-	{ SPIN,    1300 },	{ NOTHING,    5 },
-
-	// egg hatched? #2
+	// if 5 cycles (Magikarp) 
+	/*{ SPIN,  cycles },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING, 	825 },
 	{ A,          5 },	{ NOTHING, 	125 },
-	{ B,          5 },	{ NOTHING, 	 10 },
-	{ PLUS,       5 },	{ NOTHING,  100 },
+	{ B,          5 },	{ NOTHING, 	 10 },*/
+
+	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
 
 	/* ###### Pokemon slot 4 ###### */
 	// teleport to daycare in wildarea
@@ -156,31 +170,29 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
-	{ DOWN,       5 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 
-	// start hatching (~7 rounds)
+	// start hatching
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION,  50 },	{ NOTHING,    5 },
 	{ UP,        20 },	{ NOTHING,    5 },
 	{ POSITION,  60 },	{ NOTHING,    5 },
-	{ SPIN,    1300 },	{ NOTHING,    5 },
+	{ SPIN,  cycles },	{ NOTHING,    5 },
 
 	// egg hatched?
-	{ A,          5 },	{ NOTHING, 	825 },
-	{ A,          5 },	{ NOTHING, 	125 },
+	{ A,          5 },	{ NOTHING, 	825 }, //Oh
+	{ A,          5 },	{ NOTHING, 	125 }, //"Pokemon" hatched from the egg
 	{ B,          5 },	{ NOTHING, 	 10 },
 
-	// extra rounds (~7 rounds)
-	{ SPIN,    1300 },	{ NOTHING,    5 },
-
-	// egg hatched? #2
+	// if 5 cycles (Magikarp) 
+	/*{ SPIN,  cycles },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING, 	825 },
 	{ A,          5 },	{ NOTHING, 	125 },
-	{ B,          5 },	{ NOTHING, 	 10 },
-	{ PLUS,       5 },	{ NOTHING,  100 },
+	{ B,          5 },	{ NOTHING, 	 10 },*/
+
+	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
 
 	/* ###### Pokemon slot 5 ###### */
 	// teleport to daycare in wildarea
@@ -190,10 +202,10 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 
 	// walk to daycare and get an egg
-	{ DOWN,      70 },	{ NOTHING,    5 },
+	{ DOWN,      60 },	{ NOTHING,    5 },
 	{ LEFT,       5 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
- 	{ A,          5 },	{ NOTHING,  200 },
+ 	{ A,          5 },	{ NOTHING,  180 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
@@ -202,29 +214,28 @@ static const command step[] = {
 	{ DOWN,       5 },	{ NOTHING,    5 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
-	{ A,          5 },	{ NOTHING,  200 },
+	{ A,          5 },	{ NOTHING,  180 },
 	{ A,          5 },	{ NOTHING,  100 },
 
-	// start hatching (~7 rounds)
+	// start hatching
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION,  50 },	{ NOTHING,    5 },
 	{ UP,        20 },	{ NOTHING,    5 },
 	{ POSITION,  60 },	{ NOTHING,    5 },
-	{ SPIN,    1300 },	{ NOTHING,    5 },
+	{ SPIN,  cycles },	{ NOTHING,    5 },
 
 	// egg hatched?
-	{ A,          5 },	{ NOTHING, 	825 },
-	{ A,          5 },	{ NOTHING, 	125 },
+	{ A,          5 },	{ NOTHING, 	825 }, //Oh
+	{ A,          5 },	{ NOTHING, 	125 }, //"Pokemon" hatched from the egg
 	{ B,          5 },	{ NOTHING, 	 10 },
 
-	// extra rounds (~7 rounds)
-	{ SPIN,    1300 },	{ NOTHING,    5 },
-
-	// egg hatched? #2
+	// if 5 cycles (Magikarp) 
+	/*{ SPIN,  cycles },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING, 	825 },
 	{ A,          5 },	{ NOTHING, 	125 },
-	{ B,          5 },	{ NOTHING, 	 10 },
-	{ PLUS,       5 },	{ NOTHING,  100 },
+	{ B,          5 },	{ NOTHING, 	 10 },*/
+
+	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
 
 	/* ###### Pokemon slot 6 ###### */
 	// teleport to daycare in wildarea
@@ -234,10 +245,10 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 
 	// walk to daycare and get an egg
-	{ DOWN,      70 },	{ NOTHING,    5 },
+	{ DOWN,      60 },	{ NOTHING,    5 },
 	{ LEFT,       5 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
- 	{ A,          5 },	{ NOTHING,  200 },
+ 	{ A,          5 },	{ NOTHING,  180 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
@@ -247,29 +258,28 @@ static const command step[] = {
 	{ DOWN,       5 },	{ NOTHING,    5 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
-	{ A,          5 },	{ NOTHING,  200 },
+	{ A,          5 },	{ NOTHING,  180 },
 	{ A,          5 },	{ NOTHING,  100 },
 
-	// start hatching (~7 rounds)
+	// start hatching
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION,  50 },	{ NOTHING,    5 },
 	{ UP,        20 },	{ NOTHING,    5 },
 	{ POSITION,  60 },	{ NOTHING,    5 },
-	{ SPIN,    1300 },	{ NOTHING,    5 },
+	{ SPIN,  cycles },	{ NOTHING,    5 },
 
 	// egg hatched?
-	{ A,          5 },	{ NOTHING, 	825 },
-	{ A,          5 },	{ NOTHING, 	125 },
+	{ A,          5 },	{ NOTHING, 	825 }, //Oh
+	{ A,          5 },	{ NOTHING, 	125 }, //"Pokemon" hatched from the egg
 	{ B,          5 },	{ NOTHING, 	 10 },
 
-	// extra rounds (~7 rounds)
-	{ SPIN,    1300 },	{ NOTHING,    5 },
-
-	// egg hatched? #2
+	// if 5 cycles (Magikarp) 
+	/*{ SPIN,  cycles },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING, 	825 },
 	{ A,          5 },	{ NOTHING, 	125 },
-	{ B,          5 },	{ NOTHING, 	 10 },
-	{ PLUS,       5 },	{ NOTHING,  100 }
+	{ B,          5 },	{ NOTHING, 	 10 },*/
+
+	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
 
 	// repeat
 
