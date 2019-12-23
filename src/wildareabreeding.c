@@ -76,14 +76,22 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 }, //Yes!
 	{ A,          5 },	{ NOTHING,  100 }, //take good care of it
 
-	// start hatching (~15 rounds)
+	// start hatching (~7 rounds)
 	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
 	{ POSITION,  50 },	{ NOTHING,    5 },
 	{ UP,        20 },	{ NOTHING,    5 },
 	{ POSITION,  60 },	{ NOTHING,    5 }, //get into position
-	{ SPIN,    2600 },	{ NOTHING,    5 }, //spin for ~15 rounds
+	{ SPIN,    1300 },	{ NOTHING,    5 }, //spin for ~7 rounds
 
 	// egg hatched?
+	{ A,          5 },	{ NOTHING, 	825 }, //Oh
+	{ A,          5 },	{ NOTHING, 	125 }, //"Pokemon" hatched from the egg
+	{ B,          5 },	{ NOTHING, 	 10 },
+
+	// extra rounds (~7 rounds)
+	{ SPIN,    1300 },	{ NOTHING,    5 }, //spin for ~7 rounds
+
+	// egg hatched? #2
 	{ A,          5 },	{ NOTHING, 	825 }, //Oh
 	{ A,          5 },	{ NOTHING, 	125 }, //"Pokemon" hatched from the egg
 	{ B,          5 },	{ NOTHING, 	 10 },
@@ -110,14 +118,22 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 
-	// start hatching (~15 rounds)
+	// start hatching (~7 rounds)
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION,  50 },	{ NOTHING,    5 },
 	{ UP,        20 },	{ NOTHING,    5 },
-	{ POSITION,  60 },	{ NOTHING,    5 }, 
-	{ SPIN,    2600 },	{ NOTHING,    5 },
+	{ POSITION,  60 },	{ NOTHING,    5 },
+	{ SPIN,    1300 },	{ NOTHING,    5 },
 
 	// egg hatched?
+	{ A,          5 },	{ NOTHING, 	825 },
+	{ A,          5 },	{ NOTHING, 	125 },
+	{ B,          5 },	{ NOTHING, 	 10 },
+
+	// extra rounds (~7 rounds)
+	{ SPIN,    1300 },	{ NOTHING,    5 },
+
+	// egg hatched? #2
 	{ A,          5 },	{ NOTHING, 	825 },
 	{ A,          5 },	{ NOTHING, 	125 },
 	{ B,          5 },	{ NOTHING, 	 10 },
@@ -145,14 +161,22 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 
-	// start hatching (~15 rounds)
+	// start hatching (~7 rounds)
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION,  50 },	{ NOTHING,    5 },
 	{ UP,        20 },	{ NOTHING,    5 },
-	{ POSITION,  60 },	{ NOTHING,    5 }, 
-	{ SPIN,    2600 },	{ NOTHING,    5 },
+	{ POSITION,  60 },	{ NOTHING,    5 },
+	{ SPIN,    1300 },	{ NOTHING,    5 },
 
 	// egg hatched?
+	{ A,          5 },	{ NOTHING, 	825 },
+	{ A,          5 },	{ NOTHING, 	125 },
+	{ B,          5 },	{ NOTHING, 	 10 },
+
+	// extra rounds (~7 rounds)
+	{ SPIN,    1300 },	{ NOTHING,    5 },
+
+	// egg hatched? #2
 	{ A,          5 },	{ NOTHING, 	825 },
 	{ A,          5 },	{ NOTHING, 	125 },
 	{ B,          5 },	{ NOTHING, 	 10 },
@@ -181,14 +205,22 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 
-	// start hatching (~15 rounds)
+	// start hatching (~7 rounds)
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION,  50 },	{ NOTHING,    5 },
 	{ UP,        20 },	{ NOTHING,    5 },
-	{ POSITION,  60 },	{ NOTHING,    5 }, 
-	{ SPIN,    2600 },	{ NOTHING,    5 },
+	{ POSITION,  60 },	{ NOTHING,    5 },
+	{ SPIN,    1300 },	{ NOTHING,    5 },
 
 	// egg hatched?
+	{ A,          5 },	{ NOTHING, 	825 },
+	{ A,          5 },	{ NOTHING, 	125 },
+	{ B,          5 },	{ NOTHING, 	 10 },
+
+	// extra rounds (~7 rounds)
+	{ SPIN,    1300 },	{ NOTHING,    5 },
+
+	// egg hatched? #2
 	{ A,          5 },	{ NOTHING, 	825 },
 	{ A,          5 },	{ NOTHING, 	125 },
 	{ B,          5 },	{ NOTHING, 	 10 },
@@ -218,18 +250,26 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 
-	// start hatching (~15 rounds)
+	// start hatching (~7 rounds)
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION,  50 },	{ NOTHING,    5 },
 	{ UP,        20 },	{ NOTHING,    5 },
-	{ POSITION,  60 },	{ NOTHING,    5 }, 
-	{ SPIN,    2600 },	{ NOTHING,    5 },
+	{ POSITION,  60 },	{ NOTHING,    5 },
+	{ SPIN,    1300 },	{ NOTHING,    5 },
 
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 },
 	{ A,          5 },	{ NOTHING, 	125 },
 	{ B,          5 },	{ NOTHING, 	 10 },
-	{ PLUS,       5 },	{ NOTHING,  100 },
+
+	// extra rounds (~7 rounds)
+	{ SPIN,    1300 },	{ NOTHING,    5 },
+
+	// egg hatched? #2
+	{ A,          5 },	{ NOTHING, 	825 },
+	{ A,          5 },	{ NOTHING, 	125 },
+	{ B,          5 },	{ NOTHING, 	 10 },
+	{ PLUS,       5 },	{ NOTHING,  100 }
 
 	// repeat
 
