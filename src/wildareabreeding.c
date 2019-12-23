@@ -170,6 +170,7 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
+	{ DOWN,       5 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
