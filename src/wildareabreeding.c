@@ -76,7 +76,7 @@ static const command step[] = {
 	{ LEFT,       5 },	{ NOTHING,    5 }, //a little bit left
 	{ A,          5 },	{ NOTHING,  100 }, //talk to her "I have an egg for you, do you want it?"
  	{ A,          5 },	{ NOTHING,  200 }, //yes I do
-	{ A,          5 },	{ NOTHING,  100 }, //you got it
+	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
 	{ A,          5 },	{ NOTHING,  100 }, //Put egg on your team
 	{ A,          5 },	{ NOTHING,  100 }, //please select the slot!
 	{ DOWN,       5 },	{ NOTHING,    5 }, //select correct pokemon slot
@@ -110,7 +110,7 @@ static const command step[] = {
 	{ LEFT,       5 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
  	{ A,          5 },	{ NOTHING,  200 },
-	{ A,          5 },	{ NOTHING,  100 },
+	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
@@ -145,7 +145,7 @@ static const command step[] = {
 	{ LEFT,       5 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
  	{ A,          5 },	{ NOTHING,  200 },
-	{ A,          5 },	{ NOTHING,  100 },
+	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
@@ -181,7 +181,7 @@ static const command step[] = {
 	{ LEFT,       5 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
  	{ A,          5 },	{ NOTHING,  200 },
-	{ A,          5 },	{ NOTHING,  100 },
+	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
@@ -218,7 +218,7 @@ static const command step[] = {
 	{ LEFT,       5 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
  	{ A,          5 },	{ NOTHING,  200 },
-	{ A,          5 },	{ NOTHING,  100 },
+	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
