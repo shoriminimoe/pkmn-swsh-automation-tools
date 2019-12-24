@@ -45,6 +45,10 @@ typedef struct {
 	uint16_t duration;
 } command; 
 
+#define ONE_CYCLE 130
+#define N20_CYCLES ONE_CYCLE * 20
+#define N25_CYCLES ONE_CYCLE * 25
+#define N30_CYCLES ONE_CYCLE * 30
 /*
 
 https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
@@ -60,7 +64,6 @@ https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
 
 */
 #define cycles 2800
-
 static const command step[] = {
 	// Setup controller
 						{ NOTHING,  150 },
@@ -73,8 +76,11 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 
 	/* ###### Pokemon slot 2 ###### */
+
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 }, //open menu
+	{ DOWN,      20 },	{ NOTHING,    5 },
+	{ RIGHT,     50 },	{ NOTHING,    5 }, //select map in bottom right
 	{ A,          5 },	{ NOTHING,  100 }, 
 	{ A,          5 },	{ NOTHING,  100 }, //you want to teleport here?
 	{ A,          5 },	{ NOTHING,  100 }, //sure!
@@ -84,9 +90,8 @@ static const command step[] = {
 	{ LEFT,       5 },	{ NOTHING,    5 }, //a little bit left
 	{ A,          5 },	{ NOTHING,  100 }, //talk to her "I have an egg for you, do you want it?"
  	{ A,          5 },	{ NOTHING,  200 }, //yes I do
-	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
+	{ A,          5 },	{ NOTHING,  100 }, //you got it
 	{ A,          5 },	{ NOTHING,  100 }, //Put egg on your team
-	{ RIGHT,      5 },	{ NOTHING,    5 }, //Turn away if there was no egg
 	{ A,          5 },	{ NOTHING,  100 }, //please select the slot!
 	{ DOWN,       5 },	{ NOTHING,    5 }, //select correct pokemon slot
 	{ A,          5 },	{ NOTHING,  100 }, //You sure want to put it here?
@@ -104,14 +109,153 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING, 	825 }, //Oh
 	{ A,          5 },	{ NOTHING, 	125 }, //"Pokemon" hatched from the egg
 	{ B,          5 },	{ NOTHING, 	 10 },
+	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
 
-	// if 5 cycles (Magikarp) 
-	/*{ SPIN,  cycles },	{ NOTHING,    5 }, // extra rounds to make sure daycare have an egg
+	/* ###### Pokemon slot 3 ###### */
+
+	// teleport to daycare in wildarea
+	{ X,          5 },	{ NOTHING,  100 },
+	{ DOWN,      20 },	{ NOTHING,    5 },
+	{ RIGHT,     50 },	{ NOTHING,    5 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
+
+	// walk to daycare and get an egg
+	{ DOWN,      70 },	{ NOTHING,    5 },
+	{ LEFT,       5 },	{ NOTHING,    5 },
+	{ A,          5 },	{ NOTHING,  100 },
+ 	{ A,          5 },	{ NOTHING,  200 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ DOWN,       5 },	{ NOTHING,    5 },
+	{ DOWN,       5 },	{ NOTHING,    5 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  200 },
+	{ A,          5 },	{ NOTHING,  100 },
+
+	// start hatching (20 cycles)
+	{ PLUS,       5 },	{ NOTHING,    5 },
+	{ POSITION, 130 },	{ NOTHING,    5 },
+	{ SPIN,    2600 },	{ NOTHING,    5 },
+
+	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 },
 	{ A,          5 },	{ NOTHING, 	125 },
-	{ B,          5 },	{ NOTHING, 	 10 },*/
+	{ B,          5 },	{ NOTHING, 	 10 },
+	{ PLUS,       5 },	{ NOTHING,  100 },
 
-	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
+	/* ###### Pokemon slot 4 ###### */
+
+	// teleport to daycare in wildarea
+	{ X,          5 },	{ NOTHING,  100 },
+	{ DOWN,      20 },	{ NOTHING,    5 },
+	{ RIGHT,     50 },	{ NOTHING,    5 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
+
+	// walk to daycare and get an egg
+	{ DOWN,      70 },	{ NOTHING,    5 },
+	{ LEFT,       5 },	{ NOTHING,    5 },
+	{ A,          5 },	{ NOTHING,  100 },
+ 	{ A,          5 },	{ NOTHING,  200 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ DOWN,       5 },	{ NOTHING,    5 },
+	{ DOWN,       5 },	{ NOTHING,    5 },
+	{ DOWN,       5 },	{ NOTHING,    5 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  200 },
+	{ A,          5 },	{ NOTHING,  100 },
+
+	// start hatching (20 cycles)
+	{ PLUS,       5 },	{ NOTHING,    5 },
+	{ POSITION, 130 },	{ NOTHING,    5 },
+	{ SPIN,    2600 },	{ NOTHING,    5 },
+
+	// egg hatched?
+	{ A,          5 },	{ NOTHING, 	825 },
+	{ A,          5 },	{ NOTHING, 	125 },
+	{ B,          5 },	{ NOTHING, 	 10 },
+	{ PLUS,       5 },	{ NOTHING,  100 },
+
+	/* ###### Pokemon slot 5 ###### */
+
+	// teleport to daycare in wildarea
+	{ X,          5 },	{ NOTHING,  100 },
+	{ DOWN,      20 },	{ NOTHING,    5 },
+	{ RIGHT,     50 },	{ NOTHING,    5 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
+
+	// walk to daycare and get an egg
+	{ DOWN,      70 },	{ NOTHING,    5 },
+	{ LEFT,       5 },	{ NOTHING,    5 },
+	{ A,          5 },	{ NOTHING,  100 },
+ 	{ A,          5 },	{ NOTHING,  200 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ DOWN,       5 },	{ NOTHING,    5 },
+	{ DOWN,       5 },	{ NOTHING,    5 },
+	{ DOWN,       5 },	{ NOTHING,    5 },
+	{ DOWN,       5 },	{ NOTHING,    5 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  200 },
+	{ A,          5 },	{ NOTHING,  100 },
+
+	// start hatching (20 cycles)
+	{ PLUS,       5 },	{ NOTHING,    5 },
+	{ POSITION, 130 },	{ NOTHING,    5 },
+	{ SPIN,    2600 },	{ NOTHING,    5 },
+
+	// egg hatched?
+	{ A,          5 },	{ NOTHING, 	825 },
+	{ A,          5 },	{ NOTHING, 	125 },
+	{ B,          5 },	{ NOTHING, 	 10 },
+	{ PLUS,       5 },	{ NOTHING,  100 },
+
+	/* ###### Pokemon slot 6 ###### */
+
+	// teleport to daycare in wildarea
+	{ X,          5 },	{ NOTHING,  100 },
+	{ DOWN,      20 },	{ NOTHING,    5 },
+	{ RIGHT,     50 },	{ NOTHING,    5 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
+
+	// walk to daycare and get an egg
+	{ DOWN,      70 },	{ NOTHING,    5 },
+	{ LEFT,       5 },	{ NOTHING,    5 },
+	{ A,          5 },	{ NOTHING,  100 },
+ 	{ A,          5 },	{ NOTHING,  200 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ DOWN,       5 },	{ NOTHING,    5 },
+	{ DOWN,       5 },	{ NOTHING,    5 },
+	{ DOWN,       5 },	{ NOTHING,    5 },
+	{ DOWN,       5 },	{ NOTHING,    5 },
+	{ DOWN,       5 },	{ NOTHING,    5 },
+	{ A,          5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  200 },
+	{ A,          5 },	{ NOTHING,  100 },
+
+	// start hatching (20 cycles)
+	{ PLUS,       5 },	{ NOTHING,    5 },
+	{ POSITION, 130 },	{ NOTHING,    5 },
+	{ SPIN,    2600 },	{ NOTHING,    5 },
+
+	// egg hatched?
+	{ A,          5 },	{ NOTHING, 	825 },
+	{ A,          5 },	{ NOTHING, 	125 },
+	{ B,          5 },	{ NOTHING, 	 10 },
+	{ PLUS,       5 },	{ NOTHING,  100 },
 
 	// repeat
 
