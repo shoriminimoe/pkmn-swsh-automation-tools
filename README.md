@@ -29,12 +29,13 @@ Automatically farms Watts/Masterballs/Fossils at digging duo and Shiny fossil Po
 * open wildareabreeding.c in src folder
 * change value at line 62 `#define cycles`to correct amount and save
 
-1. fly to the daycare in the wild area
-2. your party needs to be full and in the first slot should be a Pokémon with the **Flame Body** ability
-3. selection in menu needs to hover the map button
-4. exit the menu
-5. go into the **Change Grip/Order** window on your Switch Homescreen and press nothing
-6. plug in the Teensy++ 2.0
+1. Set "send to boxes" option to manual
+2. fly to the daycare in the wild area
+3. your party needs to be full and in the first slot should be a Pokémon with the **Flame Body** ability
+4. selection in menu needs to hover the map button
+5. exit the menu
+6. go into the **Change Grip/Order** window on your Switch Homescreen and press nothing
+7. plug in the Teensy++ 2.0
 
 #### Release a full box of Pokémon `releasebox.hex`
 
