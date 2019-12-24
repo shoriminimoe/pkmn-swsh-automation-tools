@@ -45,6 +45,11 @@ typedef struct {
 	uint16_t duration;
 } command; 
 
+#define ONE_CYCLE 130
+#define N20_CYCLES ONE_CYCLE * 20
+#define N25_CYCLES ONE_CYCLE * 25
+#define N30_CYCLES ONE_CYCLE * 30
+
 static const command step[] = {
 	// Setup controller
 						{ NOTHING,  250 },
@@ -79,10 +84,10 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 }, //Yes!
 	{ A,          5 },	{ NOTHING,  100 }, //take good care of it
 
-	// start hatching (20 cycles)
+	// start hatching (25 cycles)
 	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
 	{ POSITION, 130 },	{ NOTHING,    5 }, //drive to the right wall
-	{ SPIN,    2600 },	{ NOTHING,    5 }, //spin for 20 cycles
+	{ SPIN,    N25_CYCLES },	{ NOTHING,    5 }, //spin for 25 cycles
 
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 }, //Oh
@@ -114,10 +119,10 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 
-	// start hatching (20 cycles)
+	// start hatching (25 cycles)
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION, 130 },	{ NOTHING,    5 },
-	{ SPIN,    2600 },	{ NOTHING,    5 },
+	{ SPIN,    N25_CYCLES },	{ NOTHING,    5 },
 
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 },
@@ -150,10 +155,10 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 
-	// start hatching (20 cycles)
+	// start hatching (25 cycles)
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION, 130 },	{ NOTHING,    5 },
-	{ SPIN,    2600 },	{ NOTHING,    5 },
+	{ SPIN,    N25_CYCLES },	{ NOTHING,    5 },
 
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 },
@@ -187,10 +192,10 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 
-	// start hatching (20 cycles)
+	// start hatching (25 cycles)
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION, 130 },	{ NOTHING,    5 },
-	{ SPIN,    2600 },	{ NOTHING,    5 },
+	{ SPIN,    N25_CYCLES },	{ NOTHING,    5 },
 
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 },
@@ -225,10 +230,10 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 
-	// start hatching (20 cycles)
+	// start hatching (25 cycles)
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION, 130 },	{ NOTHING,    5 },
-	{ SPIN,    2600 },	{ NOTHING,    5 },
+	{ SPIN,    N25_CYCLES },	{ NOTHING,    5 },
 
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 },
