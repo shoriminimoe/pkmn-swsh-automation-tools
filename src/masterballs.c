@@ -31,6 +31,8 @@ typedef enum {
 	B,
 	L,
 	R,
+	PLUS,
+	MINUS,
 	HOME,
 	NOTHING,
 	TRIGGERS
@@ -43,14 +45,14 @@ typedef struct {
 
 static const command step[] = {
 	// Setup controller
-						{ NOTHING,  250 },
+						{ NOTHING,  150 },
 	{ TRIGGERS,   5 },	{ NOTHING,  150 },
 	{ TRIGGERS,   5 },	{ NOTHING,  150 },
-	{ A,          5 },	{ NOTHING,  250 },
+	{ A,          5 },	{ NOTHING,  100 },
 
-	// // Go into game
-	// { HOME,       5 },	{ NOTHING,  250 },
-	// { A,          5 },	{ NOTHING,  250 },
+	// Go into game
+	{ HOME,       5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
 	
 	// one day forward
 	{ HOME,       5 },		{ NOTHING,  80 },
@@ -375,14 +377,6 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 					ReportData->LX = STICK_MAX;
 					break;
 
-				case X:
-					ReportData->Button |= SWITCH_X;
-					break;
-
-				case Y:
-					ReportData->Button |= SWITCH_Y;
-					break;
-
 				case A:
 					ReportData->Button |= SWITCH_A;
 					break;
@@ -393,6 +387,22 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 
 				case R:
 					ReportData->Button |= SWITCH_R;
+					break;
+
+				case X:
+					ReportData->Button |= SWITCH_X;
+					break;
+				
+				case Y:
+					ReportData->Button |= SWITCH_Y;
+					break;
+
+				case PLUS:
+					ReportData->Button |= SWITCH_PLUS;
+					break;
+
+				case MINUS:
+					ReportData->Button |= SWITCH_MINUS;
 					break;
 
 				case HOME:
@@ -426,7 +436,7 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 
 				// state = CLEANUP;
 
-				bufindex = 7;
+				bufindex = 11;
 				duration_count = 0;
 
 				state = BREATHE;

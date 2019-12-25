@@ -18,8 +18,8 @@ Automatically farms Watts/Masterballs/Fossils at digging duo and Shiny fossil Po
 *This uses the new VS date spamming exploit, look it up on youtube.*
 
 1. Enable the VS date spam exploit
-2. got into a Pokécenter ritgh in front of the computer
-3. make sure yo ucan play the lottery today (do not play yet)
+2. go into a Pokécenter right in front of the computer
+3. make sure you can play the lottery today (do not play yet)
 4. set you switch clock settigns to manual mode
 5. go into the **Change Grip/Order** window on your Switch Homescreen and press nothing
 6. plug in the Teensy++ 2.0
