@@ -45,7 +45,7 @@ typedef struct {
 	uint16_t duration;
 } command; 
 
-#define ONE_CYCLE 150
+#define ONE_CYCLE 250
 #define N20_CYCLES ONE_CYCLE * 20
 #define N25_CYCLES ONE_CYCLE * 25
 #define N30_CYCLES ONE_CYCLE * 30
