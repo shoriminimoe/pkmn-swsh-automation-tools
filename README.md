@@ -39,7 +39,13 @@ Automatically farms Watts/Masterballs/Fossils at digging duo and Shiny fossil Po
 5. go into the **Change Grip/Order** window on your Switch Homescreen and press nothing
 6. plug in the Teensy++ 2.0
 
+#### Auto trader
 
+1. Move somewhere safe, like the pokemon daycare
+1. Switch to the box of pokemon you want to trade
+2. Disconnect from internet in y-comm if already connected
+2. go into the **Change Grip/Order** window on your Switch Homescreen and press nothing
+3. Plug in the Teensy++ 2.0
 *In case you see issues with controller conflicts while in docked mode, try using a USB-C to USB-A adapter in handheld mode. In dock mode, changes in the HDMI connection will briefly make the Switch not respond to incoming USB commands, skipping parts of the sequence. These changes may include turning off the TV, or switching the HDMI input. (Switching to the internal tuner will be OK, if this doesn't trigger a change in the HDMI input.)*
 
 **This repository has been tested using a Teensy++ 2.0.**

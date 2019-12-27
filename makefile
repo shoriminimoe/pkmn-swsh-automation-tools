@@ -1,4 +1,4 @@
-all:  watts dig balls wildarea
+all:  watts dig balls wildarea autotrader
 
 watts:
 	make -f wattsfarmer.mk
@@ -20,5 +20,10 @@ wildarea:
 	mkdir -p hex
 	mv wildareabreeding.hex hex
 
+autotrader:
+	make -f autotrader.mk
+	mkdir -p hex
+	mv autotrader.hex hex
+
 clean:
-	rm -f *.bin *.eep *.elf *.lss *.map *.sym
+	rm -f *.bin *.eep *.elf *.lss *.map *.sym hex/*
