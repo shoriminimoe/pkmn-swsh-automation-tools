@@ -21,4 +21,4 @@ wildarea:
 	mv wildareabreeding.hex hex
 
 clean:
-	rm -f *.bin *.eep *.elf *.lss *.map *.sym
+	rm -f *.bin *.eep *.elf *.lss *.map *.sym hex/*

@@ -81,6 +81,7 @@ static const command step[] = {
  	{ A,          5 },	{ NOTHING,  200 }, //yes I do
 	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
 	{ A,          5 },	{ NOTHING,  100 }, //Put egg on your team
+	{ RIGHT,      5 },	{ NOTHING,    5 }, //Turn away if there was no egg
 	{ A,          5 },	{ NOTHING,  100 }, //please select the slot!
 	{ DOWN,       5 },	{ NOTHING,    5 }, //select correct pokemon slot
 	{ A,          5 },	{ NOTHING,  100 }, //You sure want to put it here?
