@@ -78,7 +78,6 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 
 	/* ###### Pokemon slot 2 ###### */
-
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 }, //open menu
 	{ DOWN,      20 },	{ NOTHING,    5 },
@@ -86,7 +85,6 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 }, 
 	{ A,          5 },	{ NOTHING,  100 }, //you want to teleport here?
 	{ A,          5 },	{ NOTHING,  100 }, //sure!
-
 	// walk to daycare and get an egg
 	{ DOWN,      70 },	{ NOTHING,    5 }, //walk down to daycare
 	{ LEFT,       5 },	{ NOTHING,    5 }, //a little bit left
@@ -100,13 +98,11 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 }, //You sure want to put it here?
 	{ A,          5 },	{ NOTHING,  200 }, //Yes!
 	{ A,          5 },	{ NOTHING,  100 }, //take good care of it
-
 	// start hatching
 	{ UP,        20 },	{ NOTHING,    5 }, //drive to the right wall
 	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
 	{ POSITION, 110 },	{ NOTHING,    5 }, //drive to the right wall
 	{ SPIN,    SPIN_DURATION },	{ NOTHING,    5 }, //spin for 25 cycles
-
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 }, //Oh
 	{ A,          5 },	{ NOTHING, 	125 }, //"Pokemon" hatched from the egg
@@ -114,7 +110,6 @@ static const command step[] = {
 	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
 
 	/* ###### Pokemon slot 3 ###### */
-
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 },
 	{ DOWN,      20 },	{ NOTHING,    5 },
@@ -122,7 +117,6 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
-
 	// walk to daycare and get an egg
 	{ DOWN,      70 },	{ NOTHING,    5 },
 	{ LEFT,       5 },	{ NOTHING,    5 },
@@ -136,13 +130,11 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
-
 	// start hatching
 	{ UP,        20 },	{ NOTHING,    5 }, //drive to the right wall
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION, 110 },	{ NOTHING,    5 },
 	{ SPIN,    SPIN_DURATION },	{ NOTHING,    5 },
-
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 },
 	{ A,          5 },	{ NOTHING, 	125 },
@@ -150,7 +142,6 @@ static const command step[] = {
 	{ PLUS,       5 },	{ NOTHING,  100 },
 
 	/* ###### Pokemon slot 4 ###### */
-
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 },
 	{ DOWN,      20 },	{ NOTHING,    5 },
@@ -158,7 +149,6 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
-
 	// walk to daycare and get an egg
 	{ DOWN,      70 },	{ NOTHING,    5 },
 	{ LEFT,       5 },	{ NOTHING,    5 },
@@ -173,13 +163,11 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
-
 	// start hatching
 	{ UP,        20 },	{ NOTHING,    5 }, //drive to the right wall
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION, 110 },	{ NOTHING,    5 },
 	{ SPIN,    SPIN_DURATION },	{ NOTHING,    5 },
-
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 },
 	{ A,          5 },	{ NOTHING, 	125 },
@@ -187,7 +175,6 @@ static const command step[] = {
 	{ PLUS,       5 },	{ NOTHING,  100 },
 
 	/* ###### Pokemon slot 5 ###### */
-
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 },
 	{ DOWN,      20 },	{ NOTHING,    5 },
@@ -195,7 +182,6 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
-
 	// walk to daycare and get an egg
 	{ DOWN,      70 },	{ NOTHING,    5 },
 	{ LEFT,       5 },	{ NOTHING,    5 },
@@ -211,13 +197,11 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
-
 	// start hatching
 	{ UP,        20 },	{ NOTHING,    5 }, //drive to the right wall
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION, 110 },	{ NOTHING,    5 },
 	{ SPIN,    SPIN_DURATION },	{ NOTHING,    5 },
-
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 },
 	{ A,          5 },	{ NOTHING, 	125 },
@@ -225,7 +209,6 @@ static const command step[] = {
 	{ PLUS,       5 },	{ NOTHING,  100 },
 
 	/* ###### Pokemon slot 6 ###### */
-
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 },
 	{ DOWN,      20 },	{ NOTHING,    5 },
@@ -233,7 +216,6 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
-
 	// walk to daycare and get an egg
 	{ DOWN,      70 },	{ NOTHING,    5 },
 	{ LEFT,       5 },	{ NOTHING,    5 },
@@ -250,13 +232,11 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
-
 	// start hatching
 	{ UP,        20 },	{ NOTHING,    5 }, //drive to the right wall
 	{ PLUS,       5 },	{ NOTHING,    5 },
 	{ POSITION, 110 },	{ NOTHING,    5 },
 	{ SPIN,    SPIN_DURATION },	{ NOTHING,    5 },
-
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 },
 	{ A,          5 },	{ NOTHING, 	125 },
@@ -264,7 +244,6 @@ static const command step[] = {
 	{ PLUS,       5 },	{ NOTHING,  100 },
 
 	// repeat
-
 };
 
 // Main entry point.
