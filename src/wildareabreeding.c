@@ -89,8 +89,9 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 }, //take good care of it
 
 	// start hatching
+	{ UP,        20 },	{ NOTHING,    5 }, //drive to the right wall
 	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
-	{ POSITION, 130 },	{ NOTHING,    5 }, //drive to the right wall
+	{ POSITION, 110 },	{ NOTHING,    5 }, //drive to the right wall
 	{ SPIN,    SPIN_DURATION },	{ NOTHING,    5 }, //spin for 25 cycles
 
 	// egg hatched?
@@ -124,8 +125,9 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 
 	// start hatching
+	{ UP,        20 },	{ NOTHING,    5 }, //drive to the right wall
 	{ PLUS,       5 },	{ NOTHING,    5 },
-	{ POSITION, 130 },	{ NOTHING,    5 },
+	{ POSITION, 110 },	{ NOTHING,    5 },
 	{ SPIN,    SPIN_DURATION },	{ NOTHING,    5 },
 
 	// egg hatched?
@@ -160,8 +162,9 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 
 	// start hatching
+	{ UP,        20 },	{ NOTHING,    5 }, //drive to the right wall
 	{ PLUS,       5 },	{ NOTHING,    5 },
-	{ POSITION, 130 },	{ NOTHING,    5 },
+	{ POSITION, 110 },	{ NOTHING,    5 },
 	{ SPIN,    SPIN_DURATION },	{ NOTHING,    5 },
 
 	// egg hatched?
@@ -197,8 +200,9 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 
 	// start hatching
+	{ UP,        20 },	{ NOTHING,    5 }, //drive to the right wall
 	{ PLUS,       5 },	{ NOTHING,    5 },
-	{ POSITION, 130 },	{ NOTHING,    5 },
+	{ POSITION, 110 },	{ NOTHING,    5 },
 	{ SPIN,    SPIN_DURATION },	{ NOTHING,    5 },
 
 	// egg hatched?
@@ -235,8 +239,9 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 },
 
 	// start hatching
+	{ UP,        20 },	{ NOTHING,    5 }, //drive to the right wall
 	{ PLUS,       5 },	{ NOTHING,    5 },
-	{ POSITION, 130 },	{ NOTHING,    5 },
+	{ POSITION, 110 },	{ NOTHING,    5 },
 	{ SPIN,    SPIN_DURATION },	{ NOTHING,    5 },
 
 	// egg hatched?
