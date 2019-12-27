@@ -51,7 +51,7 @@ typedef struct {
 #define N30_CYCLES ONE_CYCLE * 30
 // If hatching eggs in parallel, must account for the steps walking to the
 // daycare lady 5 times since receiving the egg
-#define SPIN_DURATION N20_CYCLES - ONE_CYCLE
+#define SPIN_DURATION N20_CYCLES / 10
 
 https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
 
