@@ -111,6 +111,7 @@ static const command step[] = {
  	{ A,          5 },	{ NOTHING,  200 },
 	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
 	{ A,          5 },	{ NOTHING,  100 },
+	{ RIGHT,      5 },	{ NOTHING,    5 }, //Turn away if there was no egg
 	{ A,          5 },	{ NOTHING,  100 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
@@ -143,6 +144,7 @@ static const command step[] = {
  	{ A,          5 },	{ NOTHING,  200 },
 	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
 	{ A,          5 },	{ NOTHING,  100 },
+	{ RIGHT,      5 },	{ NOTHING,    5 }, //Turn away if there was no egg
 	{ A,          5 },	{ NOTHING,  100 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
@@ -176,6 +178,7 @@ static const command step[] = {
  	{ A,          5 },	{ NOTHING,  200 },
 	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
 	{ A,          5 },	{ NOTHING,  100 },
+	{ RIGHT,      5 },	{ NOTHING,    5 }, //Turn away if there was no egg
 	{ A,          5 },	{ NOTHING,  100 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
@@ -210,6 +213,7 @@ static const command step[] = {
  	{ A,          5 },	{ NOTHING,  200 },
 	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
 	{ A,          5 },	{ NOTHING,  100 },
+	{ RIGHT,      5 },	{ NOTHING,    5 }, //Turn away if there was no egg
 	{ A,          5 },	{ NOTHING,  100 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
 	{ DOWN,       5 },	{ NOTHING,    5 },
