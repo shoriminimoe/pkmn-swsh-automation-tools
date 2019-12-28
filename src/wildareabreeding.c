@@ -45,6 +45,12 @@ typedef struct {
 	uint16_t duration;
 } command; 
 
+#define STEPS_PER_CYCLE 257
+#define WALK_STEP_MS 330
+#define WALK_CYCLE_MS WALK_STEP_MS * STEPS_PER_CYCLE
+#define BIKE_STEP_MS 220
+#define BIKE_CYCLE_MS BIKE_STEP_MS * STEPS_PER_CYCLE
+
 #define ONE_CYCLE 150
 #define N20_CYCLES ONE_CYCLE * 20
 #define N25_CYCLES ONE_CYCLE * 25
