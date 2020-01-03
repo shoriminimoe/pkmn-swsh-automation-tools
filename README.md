@@ -64,7 +64,7 @@ Go to the Teensy website and download/install the [Teensy Loader application](ht
 LUFA has been included as a git submodule, so cloning the repo like this:
 
 ```
-git clone --recursive git@github.com:jarlave/pkmn-swsh-automation-tools.git
+git clone --recursive git@codeberg.org:jarlave/pkmn-swsh-automation-tools.git
 ```
 
 will put LUFA in the right directory.
