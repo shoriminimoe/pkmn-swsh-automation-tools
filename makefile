@@ -24,4 +24,7 @@ release: hexdir
 	mv releasebox.hex hex
 
 clean:
-	rm -f *.bin *.eep *.elf *.lss *.map *.sym hex/*
+	rm -f *.bin *.eep *.elf *.lss *.map *.sym
+
+cleaner: clean
+	rm -rf hex
