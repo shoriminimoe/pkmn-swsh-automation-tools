@@ -51,17 +51,9 @@ typedef struct {
 #define BIKE_STEP_MS 220
 #define BIKE_CYCLE_MS BIKE_STEP_MS * STEPS_PER_CYCLE
 
-#define ONE_CYCLE 150
-#define N20_CYCLES ONE_CYCLE * 20
-#define N25_CYCLES ONE_CYCLE * 25
-#define N30_CYCLES ONE_CYCLE * 30
-// If hatching eggs in parallel, must account for the steps walking to the
-// daycare lady 5 times since receiving the egg
-#define SPIN_DURATION N20_CYCLES / 5
-
+/*
 https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
-
- 5 cycles =  700 !! DO NOT FORGET TO UNCOMMENT THE "if 5 cycles (Magikarp)" PARTS !!
+ 5 cycles =  700
 10 cycles = 1400
 15 cycles = 2100
 20 cycles = 2800 (default)
@@ -69,9 +61,16 @@ https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
 30 cycles = 4200
 35 cycles = 4900
 40 cycles = 5600
-
 */
-#define cycles 2800
+
+#define ONE_CYCLE 140
+#define N20_CYCLES ONE_CYCLE * 20
+#define N25_CYCLES ONE_CYCLE * 25
+#define N30_CYCLES ONE_CYCLE * 30
+#define CYCLES ONE_CYCLE * 16
+// If hatching eggs in parallel, must account for the steps walking to the
+// daycare lady 5 times since receiving the egg
+#define SPIN_DURATION CYCLES / 5
 static const command step[] = {
 	// Setup controller
 						{ NOTHING,  250 },
@@ -86,8 +85,6 @@ static const command step[] = {
 	/* ###### Pokemon slot 2 ###### */
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 }, //open menu
-	{ DOWN,      20 },	{ NOTHING,    5 },
-	{ RIGHT,     50 },	{ NOTHING,    5 }, //select map in bottom right
 	{ A,          5 },	{ NOTHING,  100 }, 
 	{ A,          5 },	{ NOTHING,  100 }, //you want to teleport here?
 	{ A,          5 },	{ NOTHING,  100 }, //sure!
@@ -105,10 +102,11 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 }, //Yes!
 	{ A,          5 },	{ NOTHING,  100 }, //take good care of it
 	// start hatching
-	{ UP,        20 },	{ NOTHING,    5 }, //drive to the right wall
 	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
-	{ POSITION, 110 },	{ NOTHING,    5 }, //drive to the right wall
-	{ SPIN,    SPIN_DURATION },	{ NOTHING,    5 }, //spin for 25 cycles
+	{ POSITION,  50 },	{ NOTHING,    5 },
+	{ UP,        20 },	{ NOTHING,    5 },
+	{ POSITION,  60 },	{ NOTHING,    5 }, //get into position
+	{ SPIN,  SPIN_DURATION },	{ NOTHING,    5 }, //spin for X cycles
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 }, //Oh
 	{ A,          5 },	{ NOTHING, 	125 }, //"Pokemon" hatched from the egg
@@ -118,8 +116,6 @@ static const command step[] = {
 	/* ###### Pokemon slot 3 ###### */
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 },
-	{ DOWN,      20 },	{ NOTHING,    5 },
-	{ RIGHT,     50 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
@@ -138,10 +134,11 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 	// start hatching
-	{ UP,        20 },	{ NOTHING,    5 }, //drive to the right wall
-	{ PLUS,       5 },	{ NOTHING,    5 },
-	{ POSITION, 110 },	{ NOTHING,    5 },
-	{ SPIN,    SPIN_DURATION },	{ NOTHING,    5 },
+	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
+	{ POSITION,  50 },	{ NOTHING,    5 },
+	{ UP,        20 },	{ NOTHING,    5 },
+	{ POSITION,  60 },	{ NOTHING,    5 }, //get into position
+	{ SPIN,  SPIN_DURATION },	{ NOTHING,    5 }, //spin for X cycles
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 },
 	{ A,          5 },	{ NOTHING, 	125 },
@@ -151,8 +148,6 @@ static const command step[] = {
 	/* ###### Pokemon slot 4 ###### */
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 },
-	{ DOWN,      20 },	{ NOTHING,    5 },
-	{ RIGHT,     50 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
@@ -172,10 +167,11 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 	// start hatching
-	{ UP,        20 },	{ NOTHING,    5 }, //drive to the right wall
-	{ PLUS,       5 },	{ NOTHING,    5 },
-	{ POSITION, 110 },	{ NOTHING,    5 },
-	{ SPIN,    SPIN_DURATION },	{ NOTHING,    5 },
+	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
+	{ POSITION,  50 },	{ NOTHING,    5 },
+	{ UP,        20 },	{ NOTHING,    5 },
+	{ POSITION,  60 },	{ NOTHING,    5 }, //get into position
+	{ SPIN,  SPIN_DURATION },	{ NOTHING,    5 }, //spin for X cycles
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 },
 	{ A,          5 },	{ NOTHING, 	125 },
@@ -185,8 +181,6 @@ static const command step[] = {
 	/* ###### Pokemon slot 5 ###### */
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 },
-	{ DOWN,      20 },	{ NOTHING,    5 },
-	{ RIGHT,     50 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
@@ -207,10 +201,11 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 	// start hatching
-	{ UP,        20 },	{ NOTHING,    5 }, //drive to the right wall
-	{ PLUS,       5 },	{ NOTHING,    5 },
-	{ POSITION, 110 },	{ NOTHING,    5 },
-	{ SPIN,    SPIN_DURATION },	{ NOTHING,    5 },
+	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
+	{ POSITION,  50 },	{ NOTHING,    5 },
+	{ UP,        20 },	{ NOTHING,    5 },
+	{ POSITION,  60 },	{ NOTHING,    5 }, //get into position
+	{ SPIN,  SPIN_DURATION },	{ NOTHING,    5 }, //spin for X cycles
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 },
 	{ A,          5 },	{ NOTHING, 	125 },
@@ -220,8 +215,6 @@ static const command step[] = {
 	/* ###### Pokemon slot 6 ###### */
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 },
-	{ DOWN,      20 },	{ NOTHING,    5 },
-	{ RIGHT,     50 },	{ NOTHING,    5 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
@@ -243,10 +236,11 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 },
 	{ A,          5 },	{ NOTHING,  100 },
 	// start hatching
-	{ UP,        20 },	{ NOTHING,    5 }, //drive to the right wall
-	{ PLUS,       5 },	{ NOTHING,    5 },
-	{ POSITION, 110 },	{ NOTHING,    5 },
-	{ SPIN,    SPIN_DURATION },	{ NOTHING,    5 },
+	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
+	{ POSITION,  50 },	{ NOTHING,    5 },
+	{ UP,        20 },	{ NOTHING,    5 },
+	{ POSITION,  60 },	{ NOTHING,    5 }, //get into position
+	{ SPIN,  SPIN_DURATION },	{ NOTHING,    5 }, //spin for X cycles
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 },
 	{ A,          5 },	{ NOTHING, 	125 },
