@@ -1,21 +1,27 @@
-all:
+all: watts repeat-a balls wildarea release
+
+hexdir:
+	mkdir -p hex
+
+watts: hexdir
 	make -f wattsfarmer.mk
+	mv wattsfarmer.hex hex
+
+repeat-a: hexdir
 	make -f repeat-a.mk
+	mv repeat-a.hex hex
+
+balls: hexdir
 	make -f masterballs.mk
+	mv masterballs.hex hex
+
+wildarea: hexdir
 	make -f wildareabreeding.mk
+	mv wildareabreeding.hex hex
+
+release: hexdir
 	make -f releasebox.mk
+	mv releasebox.hex hex
 
-watts:
-	make -f wattsfarmer.mk
-
-repeat-a:
-	make -f repeat-a.mk
-
-balls:
-	make -f masterballs.mk
-
-wildarea:
-	make -f wildareabreeding.mk
-
-release:
-	make -f releasebox.mk
+clean:
+	rm -f *.bin *.eep *.elf *.lss *.map *.sym hex/*
