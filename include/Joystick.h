@@ -32,6 +32,9 @@
  *
  *  Header file for Joystick.c.
  */
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 #ifndef _JOYSTICK_H_
 #define _JOYSTICK_H_
@@ -120,4 +123,8 @@ void EVENT_USB_Device_ControlRequest(void);
 // Prepare the next report for the host.
 void GetNextReport(USB_JoystickReport_Input_t* const ReportData);
 
+#endif
+
+#ifdef __cplusplus
+}
 #endif

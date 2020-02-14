@@ -1,3 +1,8 @@
+default:
+	make -f main.mk
+	mkdir -p hex
+	mv main.hex hex
+
 all:  watts dig balls wildarea
 
 watts:
