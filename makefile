@@ -1,4 +1,8 @@
+.PHONY: all remake clean cleaner
+
 all: watts repeat-a balls wildarea release
+
+remake: cleaner all
 
 hexdir:
 	mkdir -p hex
