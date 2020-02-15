@@ -59,7 +59,13 @@ https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
 #ifndef EGG_CYCLES
 #define EGG_CYCLES 20
 #endif
-#define ONE_CYCLE_DURATION 140
+
+#if EGG_CYCLES > 20
+#define ONE_CYCLE_DURATION 135
+#else
+#define ONE_CYCLE_DURATION 130
+#endif
+
 #define CYCLE_DURATION ONE_CYCLE_DURATION * EGG_CYCLES
 
 static const command step[] = {
