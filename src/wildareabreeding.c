@@ -101,7 +101,9 @@ static const command step[] = {
 	// DELETE THIS BLOCK {{{
 	{ X,          5 },	{ NOTHING,   50 }, //take good care of it
 	{ X,          5 },	{ NOTHING,    5 }, //take good care of it
-	{ UP,        50 },	{ NOTHING,    5 }, //take good care of it
+	{ UP,        40 },	{ NOTHING,    5 }, //take good care of it
+	{ POSITION,  40 },	{ NOTHING,    5 }, //take good care of it
+	{ SPIN, CYCLE_DURATION },	{ NOTHING,    5 }, //take good care of it
 	// }}} DELETE THIS BLOCK
 
 	/* start hatching
