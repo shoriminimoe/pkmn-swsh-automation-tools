@@ -90,7 +90,7 @@ static const command step[] = {
 	{ UP,         5 },	{ NOTHING,    5 }, //select correct pokemon slot
 	{ A,          5 },	{ NOTHING,  100 }, //You sure want to put it here?
 	{ A,          5 },	{ NOTHING,  200 }, //Yes!
-	{ A,          5 },	{ NOTHING,   50 }, //take good care of it
+	{ A,          5 },	{ NOTHING,  100 }, //take good care of it
 	// start hatching
 	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
 	{ POSITION,  50 },	{ NOTHING,    5 },
@@ -98,7 +98,7 @@ static const command step[] = {
 	{ POSITION,  60 },	{ NOTHING,    5 }, //get into position
 	{ SPIN,  CYCLE_DURATION },	{ NOTHING,    5 }, //spin for X cycles
 	// egg hatched?
-	{ A,          5 },	{ NOTHING,  725 }, //Oh
+	{ A,          5 },	{ NOTHING,  825 }, //Oh
 	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
 	{ B,          5 },	{ NOTHING,   10 },
 	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
