@@ -85,7 +85,7 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 }, //you want to teleport here?
 	{ A,          5 },	{ NOTHING,  100 }, //sure!
 	// walk to daycare and get an egg
-	{ DOWN,      70 }, //walk down to daycare
+	{ DOWN,      40 }, //walk down to daycare
 	{ LEFT,       5 }, //a little bit left
 	{ A,          5 },	{ NOTHING,  100 }, //talk to her "I have an egg for you, do you want it?"
  	{ A,          5 },	{ NOTHING,  200 }, //yes I do
