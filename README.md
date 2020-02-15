@@ -26,15 +26,24 @@ Automatically farms Watts/Masterballs/Fossils at digging duo and Shiny fossil Po
 
 #### Shiny breeding `wildareabreeding.hex`
 
-* open wildareabreeding.c in src folder
-* change value at line 62 `#define cycles`to correct amount and save
+*Set egg cycles with `make EGG_CYCLES=n` or `make wildarea EGG_CYCLES=n` where
+n is the number of egg cycles for the pokemon you are hatching.*
 
+Prerequisites:
+- Text Speed: Fast
+- Send to Boxes: Manual
+- Give Nicknames: Don't give
+- Rotom bike fully upgraded *Tip: If you still need this, use the wattsfarmer program*
+
+Optional:
+- Autosave: Off *I like to keep autosave off in case this thing goes off the rails.*
+
+1. Set the first slot of your party to a Pokémon with the [**Flame Body**](https://bulbapedia.bulbagarden.net/wiki/Flame_Body_%28Ability%29) ability
+1. Fill the rest of your party with whatever
 1. fly to the daycare in the wild area
-2. your party needs to be full and in the first slot should be a Pokémon with the **Flame Body** ability
-3. selection in menu needs to hover the map button
-4. exit the menu
-5. go into the **Change Grip/Order** window on your Switch Homescreen and press nothing
-6. plug in the Teensy++ 2.0
+1. Save your game
+1. go into the **Change Grip/Order** window on your Switch Homescreen and press nothing
+1. plug in the Teensy++ 2.0
 
 #### Release a full box of Pokémon `releasebox.hex`
 
