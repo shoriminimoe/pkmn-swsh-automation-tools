@@ -1,4 +1,4 @@
-.PHONY: all remake clean cleaner
+EGG_CYCLES = 20
 
 all: watts repeat-a balls wildarea release
 
@@ -20,7 +20,7 @@ balls: hexdir
 	mv masterballs.hex hex
 
 wildarea: hexdir
-	make -f wildareabreeding.mk
+	make -e -f wildareabreeding.mk 
 	mv wildareabreeding.hex hex
 
 release: hexdir
@@ -32,3 +32,5 @@ clean:
 
 cleaner: clean
 	rm -rf hex
+
+.PHONY: all remake clean cleaner

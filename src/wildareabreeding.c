@@ -46,10 +46,8 @@ typedef struct {
 } command; 
 
 /*
-
 https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
-
- 5 cycles =  700 !! DO NOT FORGET TO UNCOMMENT THE "if 5 cycles (Magikarp)" PARTS !!
+ 5 cycles =  700
 10 cycles = 1400
 15 cycles = 2100
 20 cycles = 2800 (default)
@@ -57,9 +55,12 @@ https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
 30 cycles = 4200
 35 cycles = 4900
 40 cycles = 5600
-
 */
-#define cycles 2800
+#ifndef EGG_CYCLES
+#define EGG_CYCLES 20
+#endif
+#define ONE_CYCLE_DURATION 140
+#define CYCLE_DURATION ONE_CYCLE_DURATION * EGG_CYCLES
 
 static const command step[] = {
 	// Setup controller
@@ -67,18 +68,16 @@ static const command step[] = {
 	{ TRIGGERS,   5 },	{ NOTHING,  150 },
 	{ TRIGGERS,   5 },	{ NOTHING,  150 },
 	{ A,          5 },	{ NOTHING,  100 },
-
 	// Open game
 	{ HOME,       5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 },
 
-	/* ###### Pokemon slot 2 ###### */
+	/* ###### Pokemon slot 6 ###### */
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 }, //open menu
-	{ A,          5 },	{ NOTHING,  100 }, 
+	{ PLUS,       5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 }, //you want to teleport here?
 	{ A,          5 },	{ NOTHING,  100 }, //sure!
-
 	// walk to daycare and get an egg
 	{ DOWN,      70 },	{ NOTHING,    5 }, //walk down to daycare
 	{ LEFT,       5 },	{ NOTHING,    5 }, //a little bit left
@@ -88,33 +87,22 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 }, //Put egg on your team
 	{ RIGHT,      5 },	{ NOTHING,    5 }, //Turn away if there was no egg
 	{ A,          5 },	{ NOTHING,  100 }, //please select the slot!
-	{ DOWN,       5 },	{ NOTHING,    5 }, //select correct pokemon slot
+	{ UP,         5 },	{ NOTHING,   15 }, //select correct pokemon slot
 	{ A,          5 },	{ NOTHING,  100 }, //You sure want to put it here?
 	{ A,          5 },	{ NOTHING,  200 }, //Yes!
 	{ A,          5 },	{ NOTHING,  100 }, //take good care of it
-
 	// start hatching
 	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
 	{ POSITION,  50 },	{ NOTHING,    5 },
 	{ UP,        20 },	{ NOTHING,    5 },
 	{ POSITION,  60 },	{ NOTHING,    5 }, //get into position
-	{ SPIN,  cycles },	{ NOTHING,    5 }, //spin for X cycles
-
+	{ SPIN,  CYCLE_DURATION },	{ NOTHING,    5 }, //spin for X cycles
 	// egg hatched?
 	{ A,          5 },	{ NOTHING, 	825 }, //Oh
 	{ A,          5 },	{ NOTHING, 	125 }, //"Pokemon" hatched from the egg
 	{ B,          5 },	{ NOTHING, 	 10 },
-
-	// if 5 cycles (Magikarp) 
-	/*{ SPIN,  cycles },	{ NOTHING,    5 }, // extra rounds to make sure daycare have an egg
-	{ A,          5 },	{ NOTHING, 	825 },
-	{ A,          5 },	{ NOTHING, 	125 },
-	{ B,          5 },	{ NOTHING, 	 10 },*/
-
 	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
-
 	// repeat
-
 };
 
 // Main entry point.
