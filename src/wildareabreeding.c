@@ -75,8 +75,8 @@ static const command step[] = {
 	{ TRIGGERS,   5 },	{ NOTHING,  150 },
 	{ A,          5 },	{ NOTHING,  100 },
 	// Open game
-	{ HOME,       5 },	{ NOTHING,  100 },
-	{ A,          5 },	{ NOTHING,  100 },
+	{ HOME,       5 },	{ NOTHING,  50 },
+	{ HOME,       5 },	{ NOTHING,  50 },
 
 	/* ###### Pokemon slot 6 ###### */
 	// teleport to daycare in wildarea
