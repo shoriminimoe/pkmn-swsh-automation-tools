@@ -31,6 +31,6 @@ clean:
 	rm -f *.bin *.eep *.elf *.lss *.map *.sym
 
 cleaner: clean
-	rm -rf hex
+	rm -rf hex obj
 
 .PHONY: all remake clean cleaner
