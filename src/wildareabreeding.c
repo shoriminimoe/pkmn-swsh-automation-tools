@@ -92,11 +92,13 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 }, //Yes!
 	{ A,          5 },	{ NOTHING,  100 }, //take good care of it
 	// start hatching
+	{ UP,         5 },	{ NOTHING,    5 }, // Look away from daycare lady
 	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
-	{ POSITION,  50 },	{ NOTHING,    5 },
-	{ UP,        20 },	{ NOTHING,    5 },
-	{ POSITION,  60 },	{ NOTHING,    5 }, //get into position
-	{ SPIN,  CYCLE_DURATION },	{ NOTHING,    5 }, //spin for X cycles
+	{ UP,        20 },
+	{ POSITION,  10 },
+	{ UP,        20 },
+	{ POSITION, 100 },
+	{ SPIN,  CYCLE_DURATION }, //spin for X cycles
 	// egg hatched?
 	{ A,          5 },	{ NOTHING,  825 }, //Oh
 	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
