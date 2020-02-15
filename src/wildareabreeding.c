@@ -91,13 +91,20 @@ static const command step[] = {
  	{ A,          5 },	{ NOTHING,  200 }, //yes I do
 	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
 	{ A,          5 },	{ NOTHING,  100 }, //Put egg on your team
-	{ RIGHT,      5 },	{ NOTHING,    5 }, //Turn away if there was no egg
+	{ UP,         5 },	{ NOTHING,    5 }, //Turn away if there was no egg
 	{ A,          5 },	{ NOTHING,  100 }, //please select the slot!
 	{ UP,         5 },	{ NOTHING,    5 }, //select correct pokemon slot
 	{ A,          5 },	{ NOTHING,  200 }, //You sure want to put it here?
 	{ A,          5 },	{ NOTHING,  200 }, //Yes!
-	{ A,          5 },	{ NOTHING,  100 }, //take good care of it
-	// start hatching
+	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
+
+	// DELETE THIS BLOCK {{{
+	{ X,          5 },	{ NOTHING,   50 }, //take good care of it
+	{ X,          5 },	{ NOTHING,    5 }, //take good care of it
+	{ UP,        50 },	{ NOTHING,    5 }, //take good care of it
+	// }}} DELETE THIS BLOCK
+
+	/* start hatching
 	{ UP,         5 },	{ NOTHING,    5 }, // Look away from daycare lady
 	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
 	{ UP,        20 },
@@ -110,6 +117,7 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
 	{ B,          5 },	{ NOTHING,   10 },
 	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
+	*/
 	// repeat
 };
 
@@ -356,7 +364,8 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 			{
 				bufindex = 11;
 				duration_count = 0;
-				state = BREATHE;
+				//state = BREATHE;
+				state = DONE;
 				ReportData->LX = STICK_CENTER;
 				ReportData->LY = STICK_CENTER;
 				ReportData->RX = STICK_CENTER;
