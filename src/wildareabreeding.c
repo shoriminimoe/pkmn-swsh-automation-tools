@@ -95,7 +95,7 @@ static const command step[] = {
 	{ POSITION,  10 },
 	{ UP,        20 },
 	{ POSITION, 100 },
-	{ SPIN,  SPIN_DURATION }, //spin for X cycles
+	{ SPIN,  SPIN_DURATION }, { NOTHING, 5 }//spin for X cycles
 	// egg hatched?
 	{ A,          5 },	{ NOTHING,  825 }, //Oh
 	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
