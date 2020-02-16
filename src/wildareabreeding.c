@@ -96,7 +96,7 @@ static const command step[] = {
 	{ DOWN,       5 }, { NOTHING,  5 },
 	{ UP,         5 },
 	{ A,          5 },	{ NOTHING,  100 }, //You sure want to put it here?
-	{ A,          5 },	{ NOTHING,  100 }, //Yes!
+	{ A,          5 },	{ NOTHING,  150 }, //Yes!
 	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
 
 	// start hatching
@@ -357,7 +357,7 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 
 			if (bufindex > (int)( sizeof(step) / sizeof(step[0])) - 1)
 			{
-				bufindex = 11;
+				bufindex = 10;
 				duration_count = 0;
 				state = BREATHE;
 				ReportData->LX = STICK_CENTER;
