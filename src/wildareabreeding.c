@@ -70,10 +70,9 @@ https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
 
 static const command step[] = {
 	// Setup controller
-						{ NOTHING,  150 },
-	{ TRIGGERS,   5 },	{ NOTHING,  150 },
-	{ TRIGGERS,   5 },	{ NOTHING,  150 },
-	{ A,          5 },	{ NOTHING,  100 },
+	{ TRIGGERS,   5 },	{ NOTHING,  50 },
+	{ TRIGGERS,   5 },	{ NOTHING,  50 },
+	{ A,          5 },	{ NOTHING,  50 },
 	// Open game
 	{ HOME,       5 },	{ NOTHING,  50 },
 	{ HOME,       5 },	{ NOTHING,  50 },
@@ -87,8 +86,9 @@ static const command step[] = {
 	// walk to daycare and get an egg
 	{ DOWN,      40 }, //walk down to daycare
 	{ LEFT,       5 }, //a little bit left
-	{ A,          5 },	{ NOTHING,  100 }, //talk to her "I have an egg for you, do you want it?"
- 	{ A,          5 },	{ NOTHING,  200 }, //yes I do
+	{ A,          5 },	{ NOTHING,  75 }, // "Your pokemon was found holding an egg" or "Welcome to the daycare"
+ 	{ A,          5 },	{ NOTHING,  200 }, // Yes
+	/*
 	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
 	{ A,          5 },	{ NOTHING,  100 }, //Put egg on your team
 	{ UP,         5 },	{ NOTHING,    5 }, //Turn away if there was no egg
@@ -97,6 +97,7 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  200 }, //You sure want to put it here?
 	{ A,          5 },	{ NOTHING,  200 }, //Yes!
 	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
+	*/
 
 	// DELETE THIS BLOCK {{{
 	{ X,          5 },	{ NOTHING,   50 }, //take good care of it
