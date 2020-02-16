@@ -47,16 +47,18 @@ typedef struct {
 
 // https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
 #ifndef EGG_CYCLES
-#define EGG_CYCLES 20
+#define EGG_CYCLES 21
 #endif
 
-#if EGG_CYCLES > 20
-#define ONE_CYCLE_DURATION 135
-#else
-#define ONE_CYCLE_DURATION 130
-#endif
+#define TOTAL_STEPS (EGG_CYCLES*127)
+// Number of steps walking to the daycare lady
+#define WALK_STEPS 28
+// Total steps used to get into spin position
+#define POSITION_STEPS 140
+#define SPIN_STEPS (((TOTAL_STEPS-(4*WALK_STEPS))/5)-POSITION_STEPS)
 
-#define CYCLE_DURATION ((ONE_CYCLE_DURATION*EGG_CYCLES)/5)
+#define BIKE_STEPS_2_ITER (20/19)
+#define SPIN_DURATION (SPIN_STEPS*BIKE_STEPS_2_ITER)
 
 static const command step[] = {
 	// Setup controller
@@ -93,7 +95,7 @@ static const command step[] = {
 	{ POSITION,  10 },
 	{ UP,        20 },
 	{ POSITION, 100 },
-	{ SPIN,  CYCLE_DURATION }, //spin for X cycles
+	{ SPIN,  SPIN_DURATION }, //spin for X cycles
 	// egg hatched?
 	{ A,          5 },	{ NOTHING,  825 }, //Oh
 	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
@@ -131,7 +133,7 @@ static const command step[] = {
 	{ POSITION,  10 },
 	{ UP,        20 },
 	{ POSITION, 100 },
-	{ SPIN,  CYCLE_DURATION }, //spin for X cycles
+	{ SPIN,  SPIN_DURATION }, //spin for X cycles
 	// egg hatched?
 	{ A,          5 },	{ NOTHING,  825 }, //Oh
 	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
@@ -168,7 +170,7 @@ static const command step[] = {
 	{ POSITION,  10 },
 	{ UP,        20 },
 	{ POSITION, 100 },
-	{ SPIN,  CYCLE_DURATION }, //spin for X cycles
+	{ SPIN,  SPIN_DURATION }, //spin for X cycles
 	// egg hatched?
 	{ A,          5 },	{ NOTHING,  825 }, //Oh
 	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
@@ -204,7 +206,7 @@ static const command step[] = {
 	{ POSITION,  10 },
 	{ UP,        20 },
 	{ POSITION, 100 },
-	{ SPIN,  CYCLE_DURATION }, //spin for X cycles
+	{ SPIN,  SPIN_DURATION }, //spin for X cycles
 	// egg hatched?
 	{ A,          5 },	{ NOTHING,  825 }, //Oh
 	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
@@ -239,7 +241,7 @@ static const command step[] = {
 	{ POSITION,  10 },
 	{ UP,        20 },
 	{ POSITION, 100 },
-	{ SPIN,  CYCLE_DURATION }, //spin for X cycles
+	{ SPIN,  SPIN_DURATION }, //spin for X cycles
 	// egg hatched?
 	{ A,          5 },	{ NOTHING,  825 }, //Oh
 	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
