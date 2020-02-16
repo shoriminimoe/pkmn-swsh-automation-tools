@@ -96,10 +96,8 @@ static const command step[] = {
 	{ DOWN,       5 }, { NOTHING,  5 },
 	{ UP,         5 },
 	{ A,          5 },	{ NOTHING,  100 }, //You sure want to put it here?
-	{ A,          5 },	{ NOTHING,  200 }, //Yes!
-	/*
+	{ A,          5 },	{ NOTHING,  100 }, //Yes!
 	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
-	*/
 
 	// DELETE THIS BLOCK {{{
 	{ X,          5 },	{ NOTHING,   50 }, //take good care of it
