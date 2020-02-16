@@ -70,13 +70,12 @@ https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
 
 static const command step[] = {
 	// Setup controller
-						{ NOTHING,  150 },
-	{ TRIGGERS,   5 },	{ NOTHING,  150 },
-	{ TRIGGERS,   5 },	{ NOTHING,  150 },
-	{ A,          5 },	{ NOTHING,  100 },
+	{ TRIGGERS,   5 },	{ NOTHING,  50 },
+	{ TRIGGERS,   5 },	{ NOTHING,  50 },
+	{ A,          5 },	{ NOTHING,  50 },
 	// Open game
-	{ HOME,       5 },	{ NOTHING,  100 },
-	{ A,          5 },	{ NOTHING,  100 },
+	{ HOME,       5 },	{ NOTHING,  50 },
+	{ HOME,       5 },	{ NOTHING,  50 },
 
 	/* ###### Pokemon slot 6 ###### */
 	// teleport to daycare in wildarea
@@ -85,18 +84,19 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 }, //you want to teleport here?
 	{ A,          5 },	{ NOTHING,  100 }, //sure!
 	// walk to daycare and get an egg
-	{ DOWN,      70 },	{ NOTHING,    5 }, //walk down to daycare
-	{ LEFT,       5 },	{ NOTHING,    5 }, //a little bit left
-	{ A,          5 },	{ NOTHING,  100 }, //talk to her "I have an egg for you, do you want it?"
- 	{ A,          5 },	{ NOTHING,  200 }, //yes I do
+	{ DOWN,      40 }, //walk down to daycare
+	{ LEFT,       5 }, //a little bit left
+	{ A,          5 },	{ NOTHING,  75 }, // "Your pokemon was found holding an egg" or "Welcome to the daycare"
+ 	{ A,          5 },	{ NOTHING,  175 }, // Yes
 	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
-	{ A,          5 },	{ NOTHING,  100 }, //Put egg on your team
-	{ RIGHT,      5 },	{ NOTHING,    5 }, //Turn away if there was no egg
-	{ A,          5 },	{ NOTHING,  100 }, //please select the slot!
-	{ UP,         5 },	{ NOTHING,    5 }, //select correct pokemon slot
-	{ A,          5 },	{ NOTHING,  200 }, //You sure want to put it here?
-	{ A,          5 },	{ NOTHING,  200 }, //Yes!
-	{ A,          5 },	{ NOTHING,  100 }, //take good care of it
+	{ A,          5 },	{ NOTHING,   50 }, // Add to your party
+	{ UP,         5 }, // Turn away if there was no egg
+	{ A,          5 },	{ NOTHING,  100 }, // please select a pokemon to swapt from your party
+	{ UP,         5 }, //select correct pokemon slot
+	{ A,          5 },	{ NOTHING,  150 }, //You sure want to put it here?
+	{ A,          5 },	{ NOTHING,  150 }, //Yes!
+	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
+
 	// start hatching
 	{ UP,         5 },	{ NOTHING,    5 }, // Look away from daycare lady
 	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
@@ -110,6 +110,7 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
 	{ B,          5 },	{ NOTHING,   10 },
 	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
+
 	// repeat
 };
 
@@ -354,7 +355,7 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 
 			if (bufindex > (int)( sizeof(step) / sizeof(step[0])) - 1)
 			{
-				bufindex = 11;
+				bufindex = 10;
 				duration_count = 0;
 				state = BREATHE;
 				ReportData->LX = STICK_CENTER;
