@@ -87,12 +87,12 @@ static const command step[] = {
 	{ DOWN,      40 }, //walk down to daycare
 	{ LEFT,       5 }, //a little bit left
 	{ A,          5 },	{ NOTHING,  75 }, // "Your pokemon was found holding an egg" or "Welcome to the daycare"
- 	{ A,          5 },	{ NOTHING,  200 }, // Yes
-	/*
+ 	{ A,          5 },	{ NOTHING,  175 }, // Yes
 	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
-	{ A,          5 },	{ NOTHING,  100 }, //Put egg on your team
-	{ UP,         5 },	{ NOTHING,    5 }, //Turn away if there was no egg
-	{ A,          5 },	{ NOTHING,  100 }, //please select the slot!
+	{ A,          5 },	{ NOTHING,   50 }, // Add to your party
+	{ UP,         5 }, // Turn away if there was no egg
+	{ A,          5 },	{ NOTHING,  100 }, // please select a pokemon to swapt from your party
+	/*
 	{ UP,         5 },	{ NOTHING,    5 }, //select correct pokemon slot
 	{ A,          5 },	{ NOTHING,  200 }, //You sure want to put it here?
 	{ A,          5 },	{ NOTHING,  200 }, //Yes!
