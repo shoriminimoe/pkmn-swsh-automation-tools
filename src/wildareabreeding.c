@@ -77,7 +77,7 @@ static const command step[] = {
 	{ HOME,       5 },	{ NOTHING,  50 },
 	{ HOME,       5 },	{ NOTHING,  50 },
 
-	/* ###### Pokemon slot 2 ###### */
+	/* ###### Pokemon slot 6 ###### */
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 }, //open menu
 	{ PLUS,       5 },	{ NOTHING,  100 },
@@ -92,9 +92,7 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,   50 }, // Add to your party
 	{ UP,         5 }, // Turn away if there was no egg
 	{ A,          5 },	{ NOTHING,  100 }, // please select a pokemon to swapt from your party
-	{ DOWN,       5 }, { NOTHING,  5 }, //select correct pokemon slot
-	{ DOWN,       5 }, { NOTHING,  5 },
-	{ UP,         5 },
+	{ UP,         5 }, //select correct pokemon slot
 	{ A,          5 },	{ NOTHING,  150 }, //You sure want to put it here?
 	{ A,          5 },	{ NOTHING,  150 }, //Yes!
 	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
