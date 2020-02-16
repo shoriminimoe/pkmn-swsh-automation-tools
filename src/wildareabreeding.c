@@ -359,8 +359,7 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 			{
 				bufindex = 11;
 				duration_count = 0;
-				//state = BREATHE;
-				state = DONE;
+				state = BREATHE;
 				ReportData->LX = STICK_CENTER;
 				ReportData->LY = STICK_CENTER;
 				ReportData->RX = STICK_CENTER;
