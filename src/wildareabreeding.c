@@ -99,15 +99,7 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  100 }, //Yes!
 	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
 
-	// DELETE THIS BLOCK {{{
-	{ X,          5 },	{ NOTHING,   50 }, //take good care of it
-	{ X,          5 },	{ NOTHING,    5 }, //take good care of it
-	{ UP,        40 },	{ NOTHING,    5 }, //take good care of it
-	{ POSITION,  40 },	{ NOTHING,    5 }, //take good care of it
-	{ SPIN, CYCLE_DURATION },	{ NOTHING,    5 }, //take good care of it
-	// }}} DELETE THIS BLOCK
-
-	/* start hatching
+	// start hatching
 	{ UP,         5 },	{ NOTHING,    5 }, // Look away from daycare lady
 	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
 	{ UP,        20 },
@@ -120,7 +112,7 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
 	{ B,          5 },	{ NOTHING,   10 },
 	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
-	*/
+
 	// repeat
 };
 
