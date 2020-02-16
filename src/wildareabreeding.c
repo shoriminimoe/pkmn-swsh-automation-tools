@@ -45,17 +45,7 @@ typedef struct {
 	uint16_t duration;
 } command; 
 
-/*
-https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
- 5 cycles =  700
-10 cycles = 1400
-15 cycles = 2100
-20 cycles = 2800 (default)
-25 cycles = 3500
-30 cycles = 4200
-35 cycles = 4900
-40 cycles = 5600
-*/
+// https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
 #ifndef EGG_CYCLES
 #define EGG_CYCLES 20
 #endif
@@ -66,7 +56,7 @@ https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
 #define ONE_CYCLE_DURATION 130
 #endif
 
-#define CYCLE_DURATION ONE_CYCLE_DURATION * EGG_CYCLES
+#define CYCLE_DURATION ((ONE_CYCLE_DURATION*EGG_CYCLES)/5)
 
 static const command step[] = {
 	// Setup controller
@@ -96,7 +86,152 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  150 }, //You sure want to put it here?
 	{ A,          5 },	{ NOTHING,  150 }, //Yes!
 	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
+	// start hatching
+	{ UP,         5 },	{ NOTHING,    5 }, // Look away from daycare lady
+	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
+	{ UP,        20 },
+	{ POSITION,  10 },
+	{ UP,        20 },
+	{ POSITION, 100 },
+	{ SPIN,  CYCLE_DURATION }, //spin for X cycles
+	// egg hatched?
+	{ A,          5 },	{ NOTHING,  825 }, //Oh
+	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
+	{ B,          5 },	{ NOTHING,   10 },
+	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
 
+	/* ###### Pokemon slot 5 ###### */
+	// teleport to daycare in wildarea
+	{ X,          5 },	{ NOTHING,  100 }, //open menu
+	{ PLUS,       5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 }, //you want to teleport here?
+	{ A,          5 },	{ NOTHING,  100 }, //sure!
+	// walk to daycare and get an egg
+	{ DOWN,      40 }, //walk down to daycare
+	{ LEFT,       5 }, //a little bit left
+	{ A,          5 },	{ NOTHING,  75 }, // "Your pokemon was found holding an egg" or "Welcome to the daycare"
+ 	{ A,          5 },	{ NOTHING,  175 }, // Yes
+	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
+	{ A,          5 },	{ NOTHING,   50 }, // Add to your party
+	{ UP,         5 }, // Turn away if there was no egg
+	{ A,          5 },	{ NOTHING,  100 }, // please select a pokemon to swapt from your party
+	{ DOWN,       5 }, 	{ NOTHING,    5 }, //select correct pokemon slot
+	{ DOWN,       5 }, 	{ NOTHING,    5 },
+	{ DOWN,       5 }, 	{ NOTHING,    5 },
+	{ DOWN,       5 }, 	{ NOTHING,    5 },
+	{ DOWN,       5 }, 	{ NOTHING,    5 },
+	{ UP,         5 },
+	{ A,          5 },	{ NOTHING,  150 }, //You sure want to put it here?
+	{ A,          5 },	{ NOTHING,  150 }, //Yes!
+	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
+	// start hatching
+	{ UP,         5 },	{ NOTHING,    5 }, // Look away from daycare lady
+	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
+	{ UP,        20 },
+	{ POSITION,  10 },
+	{ UP,        20 },
+	{ POSITION, 100 },
+	{ SPIN,  CYCLE_DURATION }, //spin for X cycles
+	// egg hatched?
+	{ A,          5 },	{ NOTHING,  825 }, //Oh
+	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
+	{ B,          5 },	{ NOTHING,   10 },
+	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
+
+	/* ###### Pokemon slot 4 ###### */
+	// teleport to daycare in wildarea
+	{ X,          5 },	{ NOTHING,  100 }, //open menu
+	{ PLUS,       5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 }, //you want to teleport here?
+	{ A,          5 },	{ NOTHING,  100 }, //sure!
+	// walk to daycare and get an egg
+	{ DOWN,      40 }, //walk down to daycare
+	{ LEFT,       5 }, //a little bit left
+	{ A,          5 },	{ NOTHING,  75 }, // "Your pokemon was found holding an egg" or "Welcome to the daycare"
+ 	{ A,          5 },	{ NOTHING,  175 }, // Yes
+	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
+	{ A,          5 },	{ NOTHING,   50 }, // Add to your party
+	{ UP,         5 }, // Turn away if there was no egg
+	{ A,          5 },	{ NOTHING,  100 }, // please select a pokemon to swapt from your party
+	{ DOWN,       5 }, 	{ NOTHING,    5 }, //select correct pokemon slot
+	{ DOWN,       5 }, 	{ NOTHING,    5 },
+	{ DOWN,       5 }, 	{ NOTHING,    5 },
+	{ DOWN,       5 }, 	{ NOTHING,    5 },
+	{ UP,         5 },
+	{ A,          5 },	{ NOTHING,  150 }, //You sure want to put it here?
+	{ A,          5 },	{ NOTHING,  150 }, //Yes!
+	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
+	// start hatching
+	{ UP,         5 },	{ NOTHING,    5 }, // Look away from daycare lady
+	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
+	{ UP,        20 },
+	{ POSITION,  10 },
+	{ UP,        20 },
+	{ POSITION, 100 },
+	{ SPIN,  CYCLE_DURATION }, //spin for X cycles
+	// egg hatched?
+	{ A,          5 },	{ NOTHING,  825 }, //Oh
+	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
+	{ B,          5 },	{ NOTHING,   10 },
+	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
+
+	/* ###### Pokemon slot 3 ###### */
+	// teleport to daycare in wildarea
+	{ X,          5 },	{ NOTHING,  100 }, //open menu
+	{ PLUS,       5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 }, //you want to teleport here?
+	{ A,          5 },	{ NOTHING,  100 }, //sure!
+	// walk to daycare and get an egg
+	{ DOWN,      40 }, //walk down to daycare
+	{ LEFT,       5 }, //a little bit left
+	{ A,          5 },	{ NOTHING,  75 }, // "Your pokemon was found holding an egg" or "Welcome to the daycare"
+ 	{ A,          5 },	{ NOTHING,  175 }, // Yes
+	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
+	{ A,          5 },	{ NOTHING,   50 }, // Add to your party
+	{ UP,         5 }, // Turn away if there was no egg
+	{ A,          5 },	{ NOTHING,  100 }, // please select a pokemon to swapt from your party
+	{ DOWN,       5 }, 	{ NOTHING,    5 }, //select correct pokemon slot
+	{ DOWN,       5 }, 	{ NOTHING,    5 },
+	{ DOWN,       5 }, 	{ NOTHING,    5 },
+	{ UP,         5 },
+	{ A,          5 },	{ NOTHING,  150 }, //You sure want to put it here?
+	{ A,          5 },	{ NOTHING,  150 }, //Yes!
+	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
+	// start hatching
+	{ UP,         5 },	{ NOTHING,    5 }, // Look away from daycare lady
+	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
+	{ UP,        20 },
+	{ POSITION,  10 },
+	{ UP,        20 },
+	{ POSITION, 100 },
+	{ SPIN,  CYCLE_DURATION }, //spin for X cycles
+	// egg hatched?
+	{ A,          5 },	{ NOTHING,  825 }, //Oh
+	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
+	{ B,          5 },	{ NOTHING,   10 },
+	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
+
+	/* ###### Pokemon slot 2 ###### */
+	// teleport to daycare in wildarea
+	{ X,          5 },	{ NOTHING,  100 }, //open menu
+	{ PLUS,       5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 }, //you want to teleport here?
+	{ A,          5 },	{ NOTHING,  100 }, //sure!
+	// walk to daycare and get an egg
+	{ DOWN,      40 }, //walk down to daycare
+	{ LEFT,       5 }, //a little bit left
+	{ A,          5 },	{ NOTHING,  75 }, // "Your pokemon was found holding an egg" or "Welcome to the daycare"
+ 	{ A,          5 },	{ NOTHING,  175 }, // Yes
+	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
+	{ A,          5 },	{ NOTHING,   50 }, // Add to your party
+	{ UP,         5 }, // Turn away if there was no egg
+	{ A,          5 },	{ NOTHING,  100 }, // please select a pokemon to swapt from your party
+	{ DOWN,       5 }, 	{ NOTHING,    5 }, //select correct pokemon slot
+	{ DOWN,       5 }, 	{ NOTHING,    5 },
+	{ UP,         5 },
+	{ A,          5 },	{ NOTHING,  150 }, //You sure want to put it here?
+	{ A,          5 },	{ NOTHING,  150 }, //Yes!
+	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
 	// start hatching
 	{ UP,         5 },	{ NOTHING,    5 }, // Look away from daycare lady
 	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
