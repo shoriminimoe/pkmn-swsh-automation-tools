@@ -60,6 +60,10 @@ https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
 #define EGG_CYCLES 20
 #endif
 
+#ifndef MAX_HATCHES
+#define MAX_HATCHES 240
+#endif
+
 #if EGG_CYCLES > 20
 #define ONE_CYCLE_DURATION 135
 #else
@@ -243,6 +247,7 @@ int xpos = 0;
 int ypos = 0;
 int bufindex = 0;
 int duration_count = 0;
+int hatch_count = 0;
 int portsval = 0;
 
 // Prepare the next report for the host.
@@ -356,6 +361,7 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 			if (bufindex > (int)( sizeof(step) / sizeof(step[0])) - 1)
 			{
 				bufindex = 10;
+				hatch_count++;
 				duration_count = 0;
 				state = BREATHE;
 				ReportData->LX = STICK_CENTER;
@@ -365,6 +371,17 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 				ReportData->HAT = HAT_CENTER;
 			}
 			break;
+
+			if (hatch_count >= MAX_HATCHES)
+			{
+				state = DONE;
+				ReportData->LX = STICK_CENTER;
+				ReportData->LY = STICK_CENTER;
+				ReportData->RX = STICK_CENTER;
+				ReportData->RY = STICK_CENTER;
+				ReportData->HAT = HAT_CENTER;
+			}
+
 
 		case CLEANUP:
 			state = DONE;
