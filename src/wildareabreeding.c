@@ -370,7 +370,6 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 				ReportData->RY = STICK_CENTER;
 				ReportData->HAT = HAT_CENTER;
 			}
-			break;
 
 			if (hatch_count >= MAX_HATCHES)
 			{
@@ -381,7 +380,7 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 				ReportData->RY = STICK_CENTER;
 				ReportData->HAT = HAT_CENTER;
 			}
-
+			break;
 
 		case CLEANUP:
 			state = DONE;

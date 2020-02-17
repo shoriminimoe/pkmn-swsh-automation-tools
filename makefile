@@ -1,4 +1,5 @@
 EGG_CYCLES = 20
+MAX_HATCHES = 240
 
 all: watts repeat-a balls wildarea release
 
