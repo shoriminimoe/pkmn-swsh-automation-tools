@@ -100,7 +100,6 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  150 }, //You sure want to put it here?
 	{ A,          5 },	{ NOTHING,  150 }, //Yes!
 	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
-
 	// start hatching
 	{ UP,         5 },	{ NOTHING,    5 }, // Look away from daycare lady
 	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
@@ -116,6 +115,12 @@ static const command step[] = {
 	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
 
 	// repeat
+};
+
+static const command system_sleep[] = {
+	// Open sleep menu and press A
+	{ HOME,     200 },	{ NOTHING,  10 },
+	{ A,          5 },  { NOTHING,  10 },
 };
 
 // Main entry point.
@@ -249,6 +254,7 @@ int bufindex = 0;
 int duration_count = 0;
 int hatch_count = 0;
 int portsval = 0;
+int cleanup_duration = 0;
 
 // Prepare the next report for the host.
 void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
@@ -374,16 +380,41 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 			if (hatch_count >= MAX_HATCHES)
 			{
 				state = DONE;
-				ReportData->LX = STICK_CENTER;
-				ReportData->LY = STICK_CENTER;
-				ReportData->RX = STICK_CENTER;
-				ReportData->RY = STICK_CENTER;
-				ReportData->HAT = HAT_CENTER;
+				duration_count = 0;
+				bufindex = 0;
 			}
 			break;
 
 		case CLEANUP:
-			state = DONE;
+			// Put the system to sleep
+			switch (system_sleep[bufindex].button)
+			{
+				case A:
+					ReportData->Button |= SWITCH_A;
+					break;
+				case HOME:
+					ReportData->Button |= SWITCH_HOME;
+					break;
+				default:
+					ReportData->LX = STICK_CENTER;
+					ReportData->LY = STICK_CENTER;
+					ReportData->RX = STICK_CENTER;
+					ReportData->RY = STICK_CENTER;
+					ReportData->HAT = HAT_CENTER;
+					break;
+			}
+
+			duration_count++;
+			if (duration_count > system_sleep[bufindex].duration)
+			{
+				bufindex++;
+				duration_count = 0;
+			}
+
+			if (bufindex > (int)( sizeof(system_sleep) / sizeof(system_sleep[0])) - 1)
+			{
+				state = DONE;
+			}
 			break;
 
 		case DONE:
