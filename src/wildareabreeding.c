@@ -79,7 +79,7 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  50 },
 	// Open game
 	{ HOME,       5 },	{ NOTHING,  50 },
-	{ HOME,       5 },	{ NOTHING,  50 },
+	{ HOME,       5 },	{ NOTHING, 200 },
 
 	/* ###### Pokemon slot 6 ###### */
 	// teleport to daycare in wildarea
@@ -387,6 +387,9 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 
 		case CLEANUP:
 			// Put the system to sleep
+			// FIXME This step doesn't work. The switch wakes up after going to
+			// sleep.
+			/*
 			switch (system_sleep[bufindex].button)
 			{
 				case A:
@@ -415,6 +418,8 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 			{
 				state = DONE;
 			}
+			*/
+			state = DONE;
 			break;
 
 		case DONE:
