@@ -64,11 +64,7 @@ https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
 #define MAX_HATCHES 240
 #endif
 
-#if EGG_CYCLES > 20
 #define ONE_CYCLE_DURATION 135
-#else
-#define ONE_CYCLE_DURATION 130
-#endif
 
 #define CYCLE_DURATION ONE_CYCLE_DURATION * EGG_CYCLES
 
