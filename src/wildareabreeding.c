@@ -80,7 +80,7 @@ static const command step[] = {
 	/* ###### Pokemon slot 6 ###### */
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 }, //open menu
-	{ PLUS,       5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 }, //you want to teleport here?
 	{ A,          5 },	{ NOTHING,  200 }, //sure!
 	// walk to daycare and get an egg
