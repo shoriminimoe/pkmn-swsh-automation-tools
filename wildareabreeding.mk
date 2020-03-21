@@ -22,7 +22,10 @@ TARGET       = wildareabreeding
 SRC_DIR      = src
 SRC          = $(SRC_DIR)/$(TARGET).c $(SRC_DIR)/Descriptors.c $(LUFA_SRC_USB)
 LUFA_PATH    = ./lufa/LUFA
-CC_FLAGS     = -DUSE_LUFA_CONFIG_HEADER -Iinclude/ -DEGG_CYCLES=$(EGG_CYCLES) 
+CC_FLAGS     = -DUSE_LUFA_CONFIG_HEADER -Iinclude/
+CC_FLAGS    += -DEGG_CYCLES=$(EGG_CYCLES)
+CC_FLAGS    += -DMAX_HATCHES=$(MAX_HATCHES)
+CC_FLAGS    += -DALERT_WHEN_DONE
 LD_FLAGS     =
 
 # Default target
@@ -38,7 +41,3 @@ include $(LUFA_PATH)/Build/lufa_dfu.mk
 include $(LUFA_PATH)/Build/lufa_hid.mk
 include $(LUFA_PATH)/Build/lufa_avrdude.mk
 include $(LUFA_PATH)/Build/lufa_atprogram.mk
-
-# Target for LED/buzzer to alert when print is done
-with-alert: all
-with-alert: CC_FLAGS += -DALERT_WHEN_DONE

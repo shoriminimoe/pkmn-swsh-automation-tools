@@ -45,20 +45,28 @@ typedef struct {
 	uint16_t duration;
 } command; 
 
-// https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
+/*
+https://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_Egg_cycles
+ 5 cycles =  700
+10 cycles = 1400
+15 cycles = 2100
+20 cycles = 2800 (default)
+25 cycles = 3500
+30 cycles = 4200
+35 cycles = 4900
+40 cycles = 5600
+*/
 #ifndef EGG_CYCLES
-#define EGG_CYCLES 21
+#define EGG_CYCLES 20
 #endif
 
-#define TOTAL_STEPS (EGG_CYCLES*127)
-// Number of steps walking to the daycare lady
-#define WALK_STEPS 28
-// Total steps used to get into spin position
-#define POSITION_STEPS 140
-#define SPIN_STEPS (((TOTAL_STEPS-(4*WALK_STEPS))/5)-POSITION_STEPS)
+#ifndef MAX_HATCHES
+#define MAX_HATCHES 240
+#endif
 
-#define BIKE_STEPS_2_ITER (20/19)
-#define SPIN_DURATION (SPIN_STEPS*BIKE_STEPS_2_ITER)
+#define ONE_CYCLE_DURATION 135
+
+#define CYCLE_DURATION ONE_CYCLE_DURATION * EGG_CYCLES
 
 static const command step[] = {
 	// Setup controller
@@ -67,14 +75,14 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  50 },
 	// Open game
 	{ HOME,       5 },	{ NOTHING,  50 },
-	{ HOME,       5 },	{ NOTHING,  50 },
+	{ HOME,       5 },	{ NOTHING, 200 },
 
 	/* ###### Pokemon slot 6 ###### */
 	// teleport to daycare in wildarea
 	{ X,          5 },	{ NOTHING,  100 }, //open menu
-	{ PLUS,       5 },	{ NOTHING,  100 },
+	{ A,          5 },	{ NOTHING,  100 },
 	{ A,          5 },	{ NOTHING,  100 }, //you want to teleport here?
-	{ A,          5 },	{ NOTHING,  100 }, //sure!
+	{ A,          5 },	{ NOTHING,  200 }, //sure!
 	// walk to daycare and get an egg
 	{ DOWN,      40 }, //walk down to daycare
 	{ LEFT,       5 }, //a little bit left
@@ -88,44 +96,7 @@ static const command step[] = {
 	{ A,          5 },	{ NOTHING,  150 }, //You sure want to put it here?
 	{ A,          5 },	{ NOTHING,  150 }, //Yes!
 	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
-	// start hatching
-	{ UP,         5 },	{ NOTHING,    5 }, // Look away from daycare lady
-	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
-	{ UP,        20 },
-	{ POSITION,  10 },
-	{ UP,        20 },
-	{ POSITION, 100 },
-	{ SPIN,  SPIN_DURATION }, { NOTHING, 5 }//spin for X cycles
-	// egg hatched?
-	{ A,          5 },	{ NOTHING,  825 }, //Oh
-	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
-	{ B,          5 },	{ NOTHING,   10 },
-	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
 
-	/* ###### Pokemon slot 5 ###### */
-	// teleport to daycare in wildarea
-	{ X,          5 },	{ NOTHING,  100 }, //open menu
-	{ PLUS,       5 },	{ NOTHING,  100 },
-	{ A,          5 },	{ NOTHING,  100 }, //you want to teleport here?
-	{ A,          5 },	{ NOTHING,  100 }, //sure!
-	// walk to daycare and get an egg
-	{ DOWN,      40 }, //walk down to daycare
-	{ LEFT,       5 }, //a little bit left
-	{ A,          5 },	{ NOTHING,  75 }, // "Your pokemon was found holding an egg" or "Welcome to the daycare"
- 	{ A,          5 },	{ NOTHING,  175 }, // Yes
-	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
-	{ A,          5 },	{ NOTHING,   50 }, // Add to your party
-	{ UP,         5 }, // Turn away if there was no egg
-	{ A,          5 },	{ NOTHING,  100 }, // please select a pokemon to swapt from your party
-	{ DOWN,       5 }, 	{ NOTHING,    5 }, //select correct pokemon slot
-	{ DOWN,       5 }, 	{ NOTHING,    5 },
-	{ DOWN,       5 }, 	{ NOTHING,    5 },
-	{ DOWN,       5 }, 	{ NOTHING,    5 },
-	{ DOWN,       5 }, 	{ NOTHING,    5 },
-	{ UP,         5 },
-	{ A,          5 },	{ NOTHING,  150 }, //You sure want to put it here?
-	{ A,          5 },	{ NOTHING,  150 }, //Yes!
-	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
 	// start hatching
 	{ UP,         5 },	{ NOTHING,    5 }, // Look away from daycare lady
 	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
@@ -133,115 +104,7 @@ static const command step[] = {
 	{ POSITION,  10 },
 	{ UP,        20 },
 	{ POSITION, 100 },
-	{ SPIN,  SPIN_DURATION }, //spin for X cycles
-	// egg hatched?
-	{ A,          5 },	{ NOTHING,  825 }, //Oh
-	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
-	{ B,          5 },	{ NOTHING,   10 },
-	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
-
-	/* ###### Pokemon slot 4 ###### */
-	// teleport to daycare in wildarea
-	{ X,          5 },	{ NOTHING,  100 }, //open menu
-	{ PLUS,       5 },	{ NOTHING,  100 },
-	{ A,          5 },	{ NOTHING,  100 }, //you want to teleport here?
-	{ A,          5 },	{ NOTHING,  100 }, //sure!
-	// walk to daycare and get an egg
-	{ DOWN,      40 }, //walk down to daycare
-	{ LEFT,       5 }, //a little bit left
-	{ A,          5 },	{ NOTHING,  75 }, // "Your pokemon was found holding an egg" or "Welcome to the daycare"
- 	{ A,          5 },	{ NOTHING,  175 }, // Yes
-	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
-	{ A,          5 },	{ NOTHING,   50 }, // Add to your party
-	{ UP,         5 }, // Turn away if there was no egg
-	{ A,          5 },	{ NOTHING,  100 }, // please select a pokemon to swapt from your party
-	{ DOWN,       5 }, 	{ NOTHING,    5 }, //select correct pokemon slot
-	{ DOWN,       5 }, 	{ NOTHING,    5 },
-	{ DOWN,       5 }, 	{ NOTHING,    5 },
-	{ DOWN,       5 }, 	{ NOTHING,    5 },
-	{ UP,         5 },
-	{ A,          5 },	{ NOTHING,  150 }, //You sure want to put it here?
-	{ A,          5 },	{ NOTHING,  150 }, //Yes!
-	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
-	// start hatching
-	{ UP,         5 },	{ NOTHING,    5 }, // Look away from daycare lady
-	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
-	{ UP,        20 },
-	{ POSITION,  10 },
-	{ UP,        20 },
-	{ POSITION, 100 },
-	{ SPIN,  SPIN_DURATION }, //spin for X cycles
-	// egg hatched?
-	{ A,          5 },	{ NOTHING,  825 }, //Oh
-	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
-	{ B,          5 },	{ NOTHING,   10 },
-	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
-
-	/* ###### Pokemon slot 3 ###### */
-	// teleport to daycare in wildarea
-	{ X,          5 },	{ NOTHING,  100 }, //open menu
-	{ PLUS,       5 },	{ NOTHING,  100 },
-	{ A,          5 },	{ NOTHING,  100 }, //you want to teleport here?
-	{ A,          5 },	{ NOTHING,  100 }, //sure!
-	// walk to daycare and get an egg
-	{ DOWN,      40 }, //walk down to daycare
-	{ LEFT,       5 }, //a little bit left
-	{ A,          5 },	{ NOTHING,  75 }, // "Your pokemon was found holding an egg" or "Welcome to the daycare"
- 	{ A,          5 },	{ NOTHING,  175 }, // Yes
-	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
-	{ A,          5 },	{ NOTHING,   50 }, // Add to your party
-	{ UP,         5 }, // Turn away if there was no egg
-	{ A,          5 },	{ NOTHING,  100 }, // please select a pokemon to swapt from your party
-	{ DOWN,       5 }, 	{ NOTHING,    5 }, //select correct pokemon slot
-	{ DOWN,       5 }, 	{ NOTHING,    5 },
-	{ DOWN,       5 }, 	{ NOTHING,    5 },
-	{ UP,         5 },
-	{ A,          5 },	{ NOTHING,  150 }, //You sure want to put it here?
-	{ A,          5 },	{ NOTHING,  150 }, //Yes!
-	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
-	// start hatching
-	{ UP,         5 },	{ NOTHING,    5 }, // Look away from daycare lady
-	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
-	{ UP,        20 },
-	{ POSITION,  10 },
-	{ UP,        20 },
-	{ POSITION, 100 },
-	{ SPIN,  SPIN_DURATION }, //spin for X cycles
-	// egg hatched?
-	{ A,          5 },	{ NOTHING,  825 }, //Oh
-	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
-	{ B,          5 },	{ NOTHING,   10 },
-	{ PLUS,       5 },	{ NOTHING,  100 }, //get off the bike
-
-	/* ###### Pokemon slot 2 ###### */
-	// teleport to daycare in wildarea
-	{ X,          5 },	{ NOTHING,  100 }, //open menu
-	{ PLUS,       5 },	{ NOTHING,  100 },
-	{ A,          5 },	{ NOTHING,  100 }, //you want to teleport here?
-	{ A,          5 },	{ NOTHING,  100 }, //sure!
-	// walk to daycare and get an egg
-	{ DOWN,      40 }, //walk down to daycare
-	{ LEFT,       5 }, //a little bit left
-	{ A,          5 },	{ NOTHING,  75 }, // "Your pokemon was found holding an egg" or "Welcome to the daycare"
- 	{ A,          5 },	{ NOTHING,  175 }, // Yes
-	{ B,          5 },	{ NOTHING,  100 }, //you got it or exit if there is no egg
-	{ A,          5 },	{ NOTHING,   50 }, // Add to your party
-	{ UP,         5 }, // Turn away if there was no egg
-	{ A,          5 },	{ NOTHING,  100 }, // please select a pokemon to swapt from your party
-	{ DOWN,       5 }, 	{ NOTHING,    5 }, //select correct pokemon slot
-	{ DOWN,       5 }, 	{ NOTHING,    5 },
-	{ UP,         5 },
-	{ A,          5 },	{ NOTHING,  150 }, //You sure want to put it here?
-	{ A,          5 },	{ NOTHING,  150 }, //Yes!
-	{ A,          5 },	{ NOTHING,    5 }, //take good care of it
-	// start hatching
-	{ UP,         5 },	{ NOTHING,    5 }, // Look away from daycare lady
-	{ PLUS,       5 },	{ NOTHING,    5 }, //get on your bike
-	{ UP,        20 },
-	{ POSITION,  10 },
-	{ UP,        20 },
-	{ POSITION, 100 },
-	{ SPIN,  SPIN_DURATION }, //spin for X cycles
+	{ SPIN,  CYCLE_DURATION }, //spin for X cycles
 	// egg hatched?
 	{ A,          5 },	{ NOTHING,  825 }, //Oh
 	{ A,          5 },	{ NOTHING,  125 }, //"Pokemon" hatched from the egg
@@ -251,6 +114,11 @@ static const command step[] = {
 	// repeat
 };
 
+static const command system_sleep[] = {
+	// Open sleep menu and press A
+	{ HOME,     200 },	{ NOTHING,  10 },
+	{ A,          5 },  { NOTHING,  10 },
+};
 // Main entry point.
 int main(void) {
 	// We'll start by performing hardware and peripheral setup.
@@ -380,7 +248,9 @@ int xpos = 0;
 int ypos = 0;
 int bufindex = 0;
 int duration_count = 0;
+int hatch_count = 0;
 int portsval = 0;
+int cleanup_duration = 0;
 
 // Prepare the next report for the host.
 void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
@@ -493,6 +363,7 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 			if (bufindex > (int)( sizeof(step) / sizeof(step[0])) - 1)
 			{
 				bufindex = 10;
+				hatch_count++;
 				duration_count = 0;
 				state = BREATHE;
 				ReportData->LX = STICK_CENTER;
@@ -501,9 +372,49 @@ void GetNextReport(USB_JoystickReport_Input_t* const ReportData) {
 				ReportData->RY = STICK_CENTER;
 				ReportData->HAT = HAT_CENTER;
 			}
+
+			if (hatch_count >= MAX_HATCHES)
+			{
+				state = DONE;
+				duration_count = 0;
+				bufindex = 0;
+			}
 			break;
 
 		case CLEANUP:
+			// Put the system to sleep
+			// FIXME This step doesn't work. The switch wakes up after going to
+			// sleep.
+			/*
+			switch (system_sleep[bufindex].button)
+			{
+				case A:
+					ReportData->Button |= SWITCH_A;
+					break;
+				case HOME:
+					ReportData->Button |= SWITCH_HOME;
+					break;
+				default:
+					ReportData->LX = STICK_CENTER;
+					ReportData->LY = STICK_CENTER;
+					ReportData->RX = STICK_CENTER;
+					ReportData->RY = STICK_CENTER;
+					ReportData->HAT = HAT_CENTER;
+					break;
+			}
+
+			duration_count++;
+			if (duration_count > system_sleep[bufindex].duration)
+			{
+				bufindex++;
+				duration_count = 0;
+			}
+
+			if (bufindex > (int)( sizeof(system_sleep) / sizeof(system_sleep[0])) - 1)
+			{
+				state = DONE;
+			}
+			*/
 			state = DONE;
 			break;
 
